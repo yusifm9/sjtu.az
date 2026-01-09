@@ -1,130 +1,108 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Events • SJTU AZ</title>
-  <meta name="description" content="Events by the Azerbaijani Students Association at SJTU." />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header class="header">
-    <div class="container nav">
-      <a class="logo" href="index.html" aria-label="SJTU Azerbaijani Students Association">
-        <img src="images/sjtuaz.svg" alt="SJTU AZ logo" onerror="this.onerror=null;this.src='images/sjtuaz.png';" />
-        <span>SJTU AZ</span>
-      </a>
-      <nav class="menu" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="events.html" class="active">Events</a>
-        <a href="team.html">Team</a>
-        <a href="join.html">Join</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
+  <meta charset="utf-8">
 
+  <!-- FAVICONS (inside /images/) -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" sizes="any">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Azerbaijani Students Association • SJTU</title>
+  <meta name="description" content="Azerbaijani Students Association at Shanghai Jiao Tong University (SJTU) — community, culture, and support in Shanghai.">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <!-- REAL LOGO -->
+    <a class="logo" href="index.html" aria-label="Azerbaijani Students Association">
+      <img src="images/logomain.png" alt="Azerbaijani Students Association logo" class="logo-img">
+      <span class="logo-text">Azerbaijani Students Association</span>
+    </a>
+
+    <nav class="menu" aria-label="Main navigation">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="team.html">Team</a>
+      <a href="join.html">Join</a>
+    </nav>
+  </div>
+</header>
   <main>
     <section class="hero">
-      <div class="container">
-        <div class="badge">Events</div>
-        <h1>Upcoming & past events</h1>
-        <p class="lead muted">
-          Stay updated with our latest activities and community meetups.
-        </p>
+      <div class="container hero-grid">
+        <div>
+          <h1>Events</h1>
+          <p class="lead">A focused overview of our latest activity and what’s coming next.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="join.html">Join Us</a>
+            <a class="btn ghost" href="team.html">Team</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h3>Upcoming</h3>
+          <h4>SJTU Cultural Festival</h4>
+          <p class="muted">Early April (TBA) • Minhang Campus</p>
+        </aside>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="section-head row">
-          <div>
-            <h2>Upcoming</h2>
-            <p class="muted">Add your next event here.</p>
+        <div class="section-head">
+          <h2>Upcoming event</h2>
+        </div>
+
+        <article class="event">
+          <div class="event-top">
+            <span class="tag featured"><span class="dot" aria-hidden="true"></span>Upcoming</span>
+            <span class="meta">Early April (TBA)</span>
           </div>
-        </div>
-
-        <div class="event-grid">
-          <article class="event">
-            <div class="event-top">
-              <span class="tag">Upcoming</span>
-              <span class="muted">Date TBA</span>
-            </div>
-            <h3>Community Meetup</h3>
-            <p class="muted">Welcome session and networking for new and current students.</p>
-          </article>
-
-          <article class="event">
-            <div class="event-top">
-              <span class="tag">Upcoming</span>
-              <span class="muted">Date TBA</span>
-            </div>
-            <h3>Cultural Gathering</h3>
-            <p class="muted">A casual evening to celebrate Azerbaijani culture together.</p>
-          </article>
-
-          <article class="event">
-            <div class="event-top">
-              <span class="tag">Upcoming</span>
-              <span class="muted">Date TBA</span>
-            </div>
-            <h3>Collaboration Event</h3>
-            <p class="muted">A joint activity with another student association at SJTU.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section soft">
-      <div class="container">
-        <div class="section-head row">
-          <div>
-            <h2>Past highlights</h2>
-            <p class="muted">Add event descriptions and photos later.</p>
+          <h3>SJTU Cultural Festival</h3>
+          <p class="muted">
+            SJTU.AZ is going to represent Azerbaijan at the Cultural Festival of SJTU — the largest cultural event in the university —
+            related to the 130th anniversary of the university. We will showcase culture, traditions, and community.
+          </p>
+          <div class="kv">
+            <div><strong>Date</strong></div><div>To be announced (early April)</div>
+            <div><strong>Location</strong></div><div>SJTU Minhang Campus</div>
           </div>
+        </article>
+
+        <div style="height: 16px;"></div>
+
+        <div class="section-head">
+          <h2>Featured last event</h2>
         </div>
+        <article class="event">
+          <div class="event-top">
+            <span class="tag"><span class="dot" aria-hidden="true"></span>Featured</span>
+            <span class="meta">Recent</span>
+          </div>
+          <h3>Community Meetup</h3>
+          <p class="muted">Introductions, networking, and sharing practical resources for student life at SJTU.</p>
+        </article>
 
-        <div class="event-grid">
-          <article class="event">
-            <div class="event-top">
-              <span class="tag blue">Highlight</span>
-              <span class="muted">Past</span>
-            </div>
-            <h3>Welcome Meetup</h3>
-            <p class="muted">Introductions, sharing experiences, and helping new students feel at home.</p>
-          </article>
+        <div style="height: 16px;"></div>
 
-          <article class="event">
-            <div class="event-top">
-              <span class="tag green">Collab</span>
-              <span class="muted">Past</span>
-            </div>
-            <h3>Cultural Exchange</h3>
-            <p class="muted">A collaborative cultural event with students from different backgrounds.</p>
-          </article>
-
-          <article class="event">
-            <div class="event-top">
-              <span class="tag blue">Highlight</span>
-              <span class="muted">Past</span>
-            </div>
-            <h3>Community Dinner</h3>
-            <p class="muted">A cozy dinner night to connect and strengthen our network.</p>
-          </article>
+        <div class="section-head">
+          <h2>Event history</h2>
+          <p class="muted"></p>
         </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container cta-inner">
-        <div>
-          <h2>Have an event idea?</h2>
-          <p class="muted">Join the team and help organize our next activity.</p>
-        </div>
-        <div class="cta-actions">
-          <a class="btn primary" href="join.html">Join Now</a>
-          <a class="btn alt" href="team.html">Meet the Team</a>
+        <div class="grid-2">
+          <div class="card"><h3>Welcome Meetup</h3><p class="muted">Community introductions and group setup.</p></div>
+          <div class="card"><h3>Cultural Gathering</h3><p class="muted">Sharing traditions and meeting new friends.</p></div>
         </div>
       </div>
     </section>
@@ -133,19 +111,22 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a class="logo footer-logo" href="index.html" aria-label="SJTU AZ Home">
-          <img src="images/sjtuaz.svg" alt="SJTU AZ logo" onerror="this.onerror=null;this.src='images/sjtuaz.png';" />
+        <a class="logo" href="index.html" aria-label="SJTU AZ Home">
+          <span class="logo-mark" aria-hidden="true"></span>
           <span>SJTU AZ</span>
         </a>
-        <p class="muted">Azerbaijani Students Association at SJTU • Shanghai, China</p>
+        <p class="muted">Azerbaijani Students Association at Shanghai Jiao Tong University • Shanghai, China</p>
       </div>
+
       <div class="footer-links">
         <a href="about.html">About</a>
         <a href="events.html">Events</a>
-        <a href="join.html">Join</a>
         <a href="team.html">Team</a>
+        <a href="join.html">Join</a>
       </div>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

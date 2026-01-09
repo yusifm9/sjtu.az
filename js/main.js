@@ -1,2 +1,5 @@
-// main.js — ready for future features (mobile menu, event filters, etc.)
-console.log("SJTU AZ website loaded");
+
+(()=>{const p=(location.pathname.split('/').pop()||'index.html');
+document.querySelectorAll('.menu a').forEach(a=>{
+if(a.getAttribute('href')===p)a.classList.add('active');
+});})();
