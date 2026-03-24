@@ -2,110 +2,158 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
-  <!-- FAVICONS (inside /images/) -->
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico" sizes="any">
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Azerbaijani Students Association • SJTU</title>
-  <meta name="description" content="Azerbaijani Students Association at Shanghai Jiao Tong University (SJTU) — community, culture, and support in Shanghai.">
-
+  <title>About &bull; Azerbaijani Students Association at SJTU</title>
+  <meta name="description" content="About the Azerbaijani Students Association at Shanghai Jiao Tong University.">
+  <link rel="icon" type="image/png" href="images/logo-mark.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<header class="header">
-  <div class="container nav">
-    <!-- REAL LOGO -->
-    <a class="logo" href="index.html" aria-label="Azerbaijani Students Association">
-      <img src="images/logomain.png" alt="Azerbaijani Students Association logo" class="logo-img">
-      <span class="logo-text">Azerbaijani Students Association</span>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="header-logo" href="index.html" aria-label="SJTU.AZ Home">
+      <img class="logo-flag" src="images/az-flag.png" alt="Azerbaijan flag">
+      <span class="logo-text-main">SJTU.AZ</span>
     </a>
-
-    <nav class="menu" aria-label="Main navigation">
-      <a href="index.html" class="active">Home</a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="events.html">Events</a>
       <a href="team.html">Team</a>
       <a href="join.html">Join</a>
+      <a href="booth.html" style="color:var(--gold-lt);border-bottom:2px solid var(--gold);">Booth</a>
     </nav>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <h1>About us</h1>
-          <p class="lead">A student association supporting Azerbaijani students and representing culture at Shanghai Jiao Tong University.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="join.html">Join Us</a>
-            <a class="btn ghost" href="events.html">Our Events</a>
-          </div>
-        </div>
-        <aside class="hero-card">
-          <h3>Established</h3>
-          <h4>Early 2025</h4>
-          <p class="muted">Created to connect Azerbaijani students across all SJTU campuses.</p>
-        </aside>
-      </div>
-    </section>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="events.html">Events</a>
+  <a href="team.html">Team</a>
+  <a href="join.html">Join</a>
+  <a href="booth.html" style="color:var(--gold-lt);">Booth</a>
+</nav>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Our mission</h2>
-        </div>
-        <div class="surface">
-          <p class="muted" style="max-width: 80ch;">
-            We were created in early 2025 in order to combine and unite all Azerbaijani students among all the campuses of SJTU.
-            We aim to build a reliable peer network for academic and everyday support, help new students integrate smoothly, and create a strong sense of community.
-            In parallel, we promote Azerbaijani culture through respectful representation and participation in university-wide activities.
-          </p>
-        </div>
-
-        <div style="height: 14px;"></div>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>Community support</h3>
-            <p class="muted">Practical help, peer guidance, and a welcoming environment for new and current students.</p>
-          </div>
-          <div class="card">
-            <h3>Cultural representation</h3>
-            <p class="muted">Participation in festivals and events that bring Azerbaijani culture to the SJTU community.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a class="logo" href="index.html" aria-label="SJTU AZ Home">
-          <span class="logo-mark" aria-hidden="true"></span>
-          <span>SJTU AZ</span>
-        </a>
-        <p class="muted">Azerbaijani Students Association at Shanghai Jiao Tong University • Shanghai, China</p>
-      </div>
-
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="events.html">Events</a>
-        <a href="team.html">Team</a>
-        <a href="join.html">Join</a>
+<section class="hero">
+  <div class="triband"></div>
+  <svg class="hero-flames" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <radialGradient id="rg2" cx="30%" cy="80%" r="55%">
+        <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="transparent"/>
+      </radialGradient>
+    </defs>
+    <ellipse cx="300" cy="600" rx="600" ry="400" fill="url(#rg2)"/>
+    <path d="M800,500 Q860,340 920,420 Q980,500 1040,360 Q1100,220 1160,380 Q1220,540 1280,400 Q1340,260 1400,500" fill="none" stroke="#EF3340" stroke-width="1" opacity="0.25"/>
+  </svg>
+  <div class="hero-inner" style="grid-template-columns:1fr;">
+    <div style="max-width:680px;">
+      <div class="hero-tag anim-1">About Us</div>
+      <h1 class="hero-title anim-2">A Community <em>Built on Connection</em></h1>
+      <p class="hero-subtitle anim-3">Supporting Azerbaijani students and representing culture at Shanghai Jiao Tong University since early 2025.</p>
+      <div class="hero-actions anim-4">
+        <a class="btn primary" href="join.html">Join Us</a>
+        <a class="btn ghost" href="events.html">Our Events</a>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="js/main.js"></script>
+<!-- MISSION -->
+<section class="section alt">
+  <div class="section-inner">
+    <span class="section-label">Why We Exist</span>
+    <h2 class="section-title reveal">Our <em>Mission</em></h2>
+    <div class="surface reveal">
+      <p>We were created in early 2025 to combine and unite all Azerbaijani students across all campuses of SJTU. We aim to build a reliable peer network for academic and everyday support, help new students integrate smoothly, and create a strong sense of community. In parallel, we promote Azerbaijani culture through respectful representation and participation in university-wide activities.</p>
+    </div>
+
+    <div style="height:1.4rem;"></div>
+
+    <div class="cards-grid">
+      <div class="card reveal">
+        <span class="card-icon">🤝</span>
+        <h3>Community Support</h3>
+        <p>Practical help, peer guidance, and a welcoming environment for new and current students navigating life at SJTU.</p>
+      </div>
+      <div class="card reveal">
+        <span class="card-icon">🎭</span>
+        <h3>Cultural Representation</h3>
+        <p>Participation in festivals and events that bring Azerbaijani culture to the wider SJTU community with pride.</p>
+      </div>
+      <div class="card reveal">
+        <span class="card-icon">🌐</span>
+        <h3>Peer Network</h3>
+        <p>Connecting students across Minhang and Xuhui campuses so no one navigates the Shanghai experience alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section dark">
+  <div class="section-inner">
+    <span class="section-label">Our Story</span>
+    <h2 class="section-title reveal">How We <em>Started</em></h2>
+    <div class="surface reveal" style="background:rgba(255,255,255,0.06);border-color:rgba(201,168,76,0.3);">
+      <p style="color:rgba(255,255,255,0.72);">SJTU.AZ was founded in early 2025 by Azerbaijani students who recognised the need for a dedicated community at one of China's most prestigious universities. What began as informal meetups grew into a structured association registered with the International Student Community at SJTU. Today we are an active presence on campus, representing Azerbaijan at university events and building a support network that every Azerbaijani student at SJTU can rely on.</p>
+    </div>
+
+    <div style="height:1.4rem;"></div>
+
+    <div class="cards-grid">
+      <div class="card dark-card reveal">
+        <span class="card-icon">📅</span>
+        <h3>Established Early 2025</h3>
+        <p>Founded to connect Azerbaijani students across all SJTU campuses.</p>
+      </div>
+      <div class="card dark-card reveal">
+        <span class="card-icon">🏫</span>
+        <h3>Multi-Campus Reach</h3>
+        <p>Active presence on Minhang and Xuhui campuses, with representatives on both.</p>
+      </div>
+      <div class="card dark-card reveal">
+        <span class="card-icon">🎪</span>
+        <h3>Growing Events Calendar</h3>
+        <p>From welcome meetups to the SJTU Cultural Festival, our events calendar continues to grow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="join-banner">
+  <h2>Become Part of the Story</h2>
+  <p>Whether you are a new arrival or have been at SJTU for years, there is a place for you here.</p>
+  <div class="join-btns">
+    <a class="btn primary" href="join.html">Join Us</a>
+    <a class="btn outline ghost" href="team.html">Meet the Team</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html">
+        <img src="images/az-flag.png" alt="Azerbaijan flag">
+        SJTU.AZ
+      </a>
+      <p>Azerbaijani Students Association at Shanghai Jiao Tong University &bull; Shanghai, China</p>
+    </div>
+    <nav class="footer-links">
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="team.html">Team</a>
+      <a href="join.html">Join</a>
+      <a href="booth.html">Booth</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

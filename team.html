@@ -2,155 +2,182 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
-  <!-- FAVICONS (inside /images/) -->
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico" sizes="any">
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Azerbaijani Students Association • SJTU</title>
-  <meta name="description" content="Azerbaijani Students Association at Shanghai Jiao Tong University (SJTU) — community, culture, and support in Shanghai.">
-
+  <title>Team &bull; Azerbaijani Students Association at SJTU</title>
+  <meta name="description" content="Meet the team behind the Azerbaijani Students Association at Shanghai Jiao Tong University.">
+  <link rel="icon" type="image/png" href="images/logo-mark.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<header class="header">
-  <div class="container nav">
-    <!-- REAL LOGO -->
-    <a class="logo" href="index.html" aria-label="Azerbaijani Students Association">
-      <img src="images/logomain.png" alt="Azerbaijani Students Association logo" class="logo-img">
-      <span class="logo-text">Azerbaijani Students Association</span>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="header-logo" href="index.html" aria-label="SJTU.AZ Home">
+      <img class="logo-flag" src="images/az-flag.png" alt="Azerbaijan flag">
+      <span class="logo-text-main">SJTU.AZ</span>
     </a>
-
-    <nav class="menu" aria-label="Main navigation">
-      <a href="index.html" class="active">Home</a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="events.html">Events</a>
       <a href="team.html">Team</a>
       <a href="join.html">Join</a>
+      <a href="booth.html" style="color:var(--gold-lt);border-bottom:2px solid var(--gold);">Booth</a>
     </nav>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="events.html">Events</a>
+  <a href="team.html">Team</a>
+  <a href="join.html">Join</a>
+  <a href="booth.html" style="color:var(--gold-lt);">Booth</a>
+</nav>
 
-<main>
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <h1>Team</h1>
-        <p class="lead">The students leading and representing the Azerbaijani community at SJTU.</p>
-      </div>
-      <div class="hero-card">
-        <h3>Structure</h3>
-        <h4>2 campus representatives</h4>
-        <p class="muted">Supported by 20+ members</p>
-      </div>
+<section class="hero">
+  <div class="triband"></div>
+  <svg class="hero-flames" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <radialGradient id="rg4" cx="50%" cy="90%" r="50%">
+        <stop offset="0%" stop-color="#0092BC" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="transparent"/>
+      </radialGradient>
+    </defs>
+    <ellipse cx="720" cy="700" rx="900" ry="500" fill="url(#rg4)"/>
+  </svg>
+  <div class="hero-inner" style="grid-template-columns:1fr 1fr;">
+    <div>
+      <div class="hero-tag anim-1">The People</div>
+      <h1 class="hero-title anim-2">Our <em>Team</em></h1>
+      <p class="hero-subtitle anim-3">The students leading and representing the Azerbaijani community at SJTU.</p>
     </div>
-  </section>
+    <aside class="hero-card anim-3">
+      <h3>Structure</h3>
+      <h4>2 Campus Representatives</h4>
+      <p>Supported by 20+ active members across Minhang and Xuhui campuses.</p>
+    </aside>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container">
+<!-- LEADERSHIP -->
+<section class="section alt">
+  <div class="section-inner">
+    <span class="section-label">Leadership</span>
+    <h2 class="section-title reveal">Co-Founders &amp; <em>Representatives</em></h2>
 
-      <!-- LEADERSHIP -->
-      <div class="section-head">
-        <h2>Leadership</h2>
-        <p class="muted">Representatives.</p>
-      </div>
-
-      <div class="people-grid">
-        <!-- Yusif -->
-        <article class="person-card">
-          <div class="person-photo">
-            <img src="images/team/yusif-mammadov.jpg" alt="Yusif Mammadov">
-          </div>
+    <div class="people-grid">
+      <article class="person-card reveal">
+        <div class="person-photo">
+          <img src="images/team/yusif-mammadov.jpg" alt="Yusif Mammadov" loading="lazy">
+        </div>
+        <div class="person-body">
           <div class="person-name">Yusif Mammadov</div>
-          <div class="person-role">Co-founder &amp; Representative at the ISC</div>
-          <div class="person-meta">Electrical and Computer Engineering</div>
-          <div class="person-meta">Minhang &amp; Xuhui</div>
-        </article>
+          <div class="person-role">Co-founder &amp; ISC Representative</div>
+          <div class="person-meta">Electrical &amp; Computer Engineering</div>
+          <div class="person-meta" style="margin-top:2px;">Minhang &amp; Xuhui</div>
+        </div>
+      </article>
 
-        <!-- Elvin -->
-        <article class="person-card">
-          <div class="person-photo">
-            <img src="images/team/elvin-safarli.jpg" alt="Elvin Safarli">
-          </div>
+      <article class="person-card reveal">
+        <div class="person-photo">
+          <img src="images/team/elvin-safarli.jpg" alt="Elvin Safarli" loading="lazy">
+        </div>
+        <div class="person-body">
           <div class="person-name">Elvin Safarli</div>
           <div class="person-role">Co-founder</div>
           <div class="person-meta">Mechanical Engineering</div>
-          <div class="person-meta">Minhang Campus Representative</div>
-        </article>
+          <div class="person-meta" style="margin-top:2px;">Minhang Campus Representative</div>
+        </div>
+      </article>
 
-        <!-- Aghamammad -->
-        <article class="person-card">
-          <div class="person-photo">
-            <img src="images/team/aghamammad-mammadzada.jpg" alt="Aghamammad Mammadzada">
-          </div>
+      <article class="person-card reveal">
+        <div class="person-photo">
+          <img src="images/team/aghamammad-mammadzada.jpg" alt="Aghamammad Mammadzada" loading="lazy">
+        </div>
+        <div class="person-body">
           <div class="person-name">Aghamammad Mammadzada</div>
           <div class="person-role">Xuhui Campus Representative</div>
           <div class="person-meta">International Business &amp; Financial Modelling</div>
-          <div class="person-meta">Member</div>
-        </article>
-      </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-      <div style="height: 22px;"></div>
+<!-- MEMBERS -->
+<section class="section">
+  <div class="section-inner">
+    <span class="section-label">Community</span>
+    <h2 class="section-title reveal">Our <em>Members</em></h2>
 
-      <!-- MEMBERS -->
-      <div class="section-head">
-        <h2>Members</h2>
-        <p class="muted">Community members at SJTU.</p>
-      </div>
-
-      <div class="people-grid">
-        <!-- Example member cards: duplicate and edit -->
-        <article class="person-card">
-          <div class="person-photo">
-            <img src="images/team/member-01.jpg" alt="Member name">
-          </div>
+    <div class="people-grid">
+      <article class="person-card reveal">
+        <div class="person-photo">
+          <img src="images/team/member-01.jpg" alt="Amina Shabanova" loading="lazy">
+        </div>
+        <div class="person-body">
           <div class="person-name">Amina Shabanova</div>
-          <div class="person-meta">Major / Program</div>
-        </article>
+          <div class="person-meta">Member</div>
+        </div>
+      </article>
 
-        <article class="person-card">
-          <div class="person-photo">
-            <img src="images/team/member-02.jpg" alt="Member name">
-          </div>
+      <article class="person-card reveal">
+        <div class="person-photo">
+          <img src="images/team/member-02.jpg" alt="Aghamatlab Aghazade" loading="lazy">
+        </div>
+        <div class="person-body">
           <div class="person-name">Aghamatlab Aghazade</div>
-          <div class="person-meta">Electrical and Computer Engineering</div>
-        </article>
+          <div class="person-meta">Electrical &amp; Computer Engineering</div>
+        </div>
+      </article>
 
-        <article class="person-card">
-          <div class="person-photo">
-            <img src="images/team/member-03.jpg" alt="Member name">
-          </div>
+      <article class="person-card reveal">
+        <div class="person-photo">
+          <img src="images/team/member-03.jpg" alt="Turan Shahmaliyev" loading="lazy">
+        </div>
+        <div class="person-body">
           <div class="person-name">Turan Shahmaliyev</div>
           <div class="person-meta">Mechanical Engineering</div>
-        </article>
-      </div>
-
-      <div style="height: 18px;"></div>
-
-      <div class="surface">
-        <h2 style="margin:0 0 6px; font-size:18px;">Want to help?</h2>
-        <p class="muted" style="max-width: 75ch;">
-          We welcome volunteers for event organization, cultural activities, and student support. If you would like to contribute,
-          please reach out through the Join page.
-        </p>
-      </div>
-
+        </div>
+      </article>
     </div>
-  </section>
-</main>
+  </div>
+</section>
 
-<footer class="footer">
-  <div class="container footer-grid">
-    <p class="muted">Azerbaijani Students Association at SJTU • Shanghai</p>
+<!-- VOLUNTEER -->
+<section class="section dark">
+  <div class="section-inner">
+    <span class="section-label">Get Involved</span>
+    <h2 class="section-title reveal">Want to <em>Help?</em></h2>
+    <div class="surface reveal" style="background:rgba(255,255,255,0.06);border-color:rgba(201,168,76,0.3);">
+      <p style="color:rgba(255,255,255,0.72);">We welcome volunteers for event organisation, cultural activities, and student support. If you would like to contribute, please reach out through the Join page.</p>
+      <div class="hero-actions" style="margin-top:1.4rem;">
+        <a class="btn primary" href="join.html">Join &amp; Volunteer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html">
+        <img src="images/az-flag.png" alt="Azerbaijan flag">
+        SJTU.AZ
+      </a>
+      <p>Azerbaijani Students Association at Shanghai Jiao Tong University &bull; Shanghai, China</p>
+    </div>
+    <nav class="footer-links">
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="team.html">Team</a>
+      <a href="join.html">Join</a>
+      <a href="booth.html">Booth</a>
+    </nav>
   </div>
 </footer>
 

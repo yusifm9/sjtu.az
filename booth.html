@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Azerbaijan Booth &bull; SJTU Cultural Festival 2025</title>
+  <meta name="description" content="Discover Azerbaijan at the SJTU Cultural Festival. The Land of Fire, our food, culture, and community.">
+  <link rel="icon" type="image/png" href="images/logo-mark.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── BOOTH-SPECIFIC EXTRAS ──────────────────────────── */
+
+    /* Hero flag display */
+    .flag-display {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0;
+      max-width: 340px; width: 100%;
+      margin: 0 auto;
+    }
+    .flag-display img.flag-full {
+      width: 100%; border-radius: 4px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.5);
+    }
+    .flag-caption {
+      font-size: 0.75rem; color: rgba(255,255,255,0.4);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-top: 10px; text-align: center;
+    }
+
+    /* Facts grid */
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.4rem; margin-top: 2.2rem;
+    }
+    .fact-card {
+      background: #fff; border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      padding: 1.5rem 1.7rem; border-radius: var(--radius);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .fact-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(26,18,10,0.1); }
+    .fact-card .fi { font-size: 1.8rem; margin-bottom: 0.7rem; display: block; }
+    .fact-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight:700; color:var(--ink); margin-bottom:0.4rem; }
+    .fact-card p  { font-size: 0.93rem; color: var(--ink-soft); line-height: 1.65; }
+
+    /* GIF section */
+    .gif-section { background: var(--ink); }
+    .gif-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.4rem; margin-top: 2rem;
+    }
+    .gif-slot {
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: var(--radius); overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      display: flex; flex-direction: column;
+    }
+    .gif-frame {
+      width: 100%; aspect-ratio: 4/3; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .gif-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    /* Fallback placeholder for missing GIFs */
+    .gif-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 8px;
+    }
+    .gif-placeholder .gp-icon { font-size: 2.8rem; opacity: 0.6; }
+    .gif-placeholder .gp-label {
+      font-size: 0.78rem; color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .gif-body { padding: 1rem 1.2rem 1.4rem; }
+    .gif-body h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight:700; color: var(--gold-lt); margin-bottom: 0.3rem; }
+    .gif-body p  { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height:1.6; }
+
+    /* Desserts */
+    .desserts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.6rem; margin-top: 2.5rem;
+    }
+    .dessert-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.22);
+      border-radius: 4px; overflow: hidden;
+      transition: transform .25s, border-color .25s;
+    }
+    .dessert-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+    .dessert-visual {
+      height: 130px; display: flex; align-items: center;
+      justify-content: center; font-size: 4.5rem;
+    }
+    .dv-pakhlava   { background: linear-gradient(135deg,#7B4A1A,#C9852C,#8B4513); }
+    .dv-shekerbura { background: linear-gradient(135deg,#B8860B,#DAA520,#CD853F); }
+    .dv-qoqal      { background: linear-gradient(135deg,#5C3317,#A0522D,#6B3A2A); }
+    .dv-murebbe    { background: linear-gradient(135deg,#8B0000,#DC143C,#A52020); }
+    .dv-qutab      { background: linear-gradient(135deg,#2D5A27,#4A7C40,#355E30); }
+    .dessert-body  { padding: 1.3rem 1.5rem 1.7rem; }
+    .dessert-name  { font-family:'Playfair Display',serif; font-size:1.25rem; font-weight:700; color:var(--gold-lt); margin-bottom:0.2rem; }
+    .dessert-alt   { font-size:0.8rem; color:rgba(255,255,255,0.4); font-style:italic; margin-bottom:0.7rem; }
+    .dessert-desc  { font-size:0.94rem; color:rgba(255,255,255,0.7); line-height:1.7; margin-bottom:0.9rem; }
+
+    /* Places */
+    .places-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 1.4rem; margin-top: 2.2rem;
+    }
+    .place-card {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; background: #fff;
+      transition: box-shadow .2s;
+    }
+    .place-card:hover { box-shadow: 0 8px 32px rgba(26,18,10,0.1); }
+    .place-thumb {
+      height: 110px; display: flex; align-items: center;
+      justify-content: center; font-size: 3rem;
+    }
+    .pt-baku   { background: linear-gradient(135deg,#0d2137,#0a4b6e); }
+    .pt-gobus  { background: linear-gradient(135deg,#3d2b0e,#7a5523); }
+    .pt-shaki  { background: linear-gradient(135deg,#1b3d1a,#3a7a38); }
+    .pt-ydag   { background: linear-gradient(135deg,#3d1700,#8b3000); }
+    .place-info { padding: 1.1rem 1.3rem; }
+    .place-info h3 { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:0.3rem; }
+    .place-info p  { font-size:0.86rem; color:var(--ink-soft); line-height:1.6; }
+
+    /* Responsive overrides for booth specifics */
+    @media (max-width:700px) {
+      .facts-grid   { grid-template-columns: 1fr; }
+      .desserts-grid{ grid-template-columns: 1fr; }
+      .places-grid  { grid-template-columns: 1fr 1fr; }
+      .gif-grid     { grid-template-columns: 1fr; }
+    }
+    @media (max-width:440px) {
+      .places-grid  { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="header-logo" href="index.html" aria-label="SJTU.AZ Home">
+      <img class="logo-flag" src="images/az-flag.png" alt="Azerbaijan flag">
+      <span class="logo-text-main">SJTU.AZ</span>
+    </a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="team.html">Team</a>
+      <a href="join.html">Join</a>
+      <a href="booth.html" style="color:var(--gold-lt);border-bottom:2px solid var(--gold);">Booth</a>
+    </nav>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="events.html">Events</a>
+  <a href="team.html">Team</a>
+  <a href="join.html">Join</a>
+  <a href="booth.html" style="color:var(--gold-lt);">Booth</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="triband"></div>
+  <svg class="hero-flames" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <radialGradient id="rg" cx="50%" cy="80%" r="60%">
+        <stop offset="0%" stop-color="#EF3340"/>
+        <stop offset="55%" stop-color="#C9A84C" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="transparent"/>
+      </radialGradient>
+    </defs>
+    <ellipse cx="720" cy="850" rx="850" ry="550" fill="url(#rg)"/>
+    <path d="M200,700 Q260,500 320,620 Q380,740 440,560 Q500,380 560,580 Q620,780 680,600 Q740,420 800,600 Q860,780 920,580 Q980,380 1040,560 Q1100,740 1160,600 Q1220,460 1240,700" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.32"/>
+  </svg>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag anim-1">SJTU Cultural Festival 2025</div>
+      <h1 class="hero-title anim-2">Azerbaijan<br><em>Land of Fire</em></h1>
+      <p class="hero-subtitle anim-3">Where ancient flame meets modern brilliance. A nation at the crossroads of Europe and Asia.</p>
+      <div class="hero-meta anim-4">
+        <div class="hero-meta-item">
+          <strong>10.4M</strong>
+          <span>Population</span>
+        </div>
+        <div class="hero-meta-item">
+          <strong>Baku</strong>
+          <span>Capital</span>
+        </div>
+        <div class="hero-meta-item">
+          <strong>1918</strong>
+          <span>First Republic</span>
+        </div>
+        <div class="hero-meta-item">
+          <strong>3</strong>
+          <span>UNESCO Sites</span>
+        </div>
+      </div>
+    </div>
+    <div class="flag-display anim-3">
+      <img class="flag-full" src="images/az-flag.png" alt="Flag of the Republic of Azerbaijan">
+      <p class="flag-caption">Flag of the Republic of Azerbaijan</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT AZERBAIJAN -->
+<section class="section alt">
+  <div class="section-inner">
+    <span class="section-label">About the Country</span>
+    <h2 class="section-title reveal">A Nation of <em>Fire and Heritage</em></h2>
+    <p class="section-body reveal">Azerbaijan sits at a breathtaking crossroads where the Greater Caucasus Mountains meet the Caspian Sea, and where East meets West. The name itself means "Protector of Fire," a title earned over millennia of natural flames, cultural brilliance, and fierce independence.</p>
+
+    <div class="facts-grid">
+      <div class="fact-card reveal">
+        <span class="fi">🔥</span>
+        <h3>Land of Eternal Flame</h3>
+        <p>Yanar Dag, "Burning Mountain," has blazed continuously for centuries on the Absheron Peninsula, fuelled by natural gas seeping through the rocks. Ancient fire-worshippers made pilgrimage here long before the oil age began.</p>
+      </div>
+      <div class="fact-card reveal">
+        <span class="fi">🌍</span>
+        <h3>World's Lowest Capital</h3>
+        <p>Baku sits 28 metres below sea level on the Caspian coast, making it the world's lowest-lying capital city, lower even than Amsterdam. Its name may derive from "Bad-kube," meaning City of Winds.</p>
+      </div>
+      <div class="fact-card reveal">
+        <span class="fi">⛽</span>
+        <h3>Oil Pioneer</h3>
+        <p>In 1901, Azerbaijani oilfields supplied over half of the entire world's oil. The world's first industrial oil well was drilled near Baku in 1848, decades before the famous Pennsylvania strikes.</p>
+      </div>
+      <div class="fact-card reveal">
+        <span class="fi">🗳️</span>
+        <h3>First Muslim Democracy</h3>
+        <p>In 1918, the Azerbaijan Democratic Republic became the first secular democracy in the Muslim world, granting women the right to vote, two years before the United States and a decade before Great Britain.</p>
+      </div>
+      <div class="fact-card reveal">
+        <span class="fi">🌋</span>
+        <h3>Mud Volcano Capital</h3>
+        <p>Azerbaijan has around 350 mud volcanoes, more than any other country on earth. The Gobustan region's volcanic landscape is over 20 million years old and part of a UNESCO World Heritage Site.</p>
+      </div>
+      <div class="fact-card reveal">
+        <span class="fi">🏛️</span>
+        <h3>UNESCO Old City</h3>
+        <p>Baku's Icherisheher (Inner City), enclosed by 12th-century walls, is a UNESCO World Heritage Site. The iconic Maiden Tower and Shirvanshahs' Palace stand as testament to Azerbaijan's medieval grandeur.</p>
+      </div>
+      <div class="fact-card reveal">
+        <span class="fi">🪨</span>
+        <h3>40,000-Year-Old Art</h3>
+        <p>Gobustan is home to over 6,000 rock engravings dating back more than 40,000 years, one of the richest collections of prehistoric rock art in the world, recognised as a UNESCO Heritage Landscape.</p>
+      </div>
+      <div class="fact-card reveal">
+        <span class="fi">🫖</span>
+        <h3>Tea Culture</h3>
+        <p>Black tea served in the pear-shaped armudu glass is a symbol of hospitality, typically sipped with a cube of sugar or jam held in the mouth, infusing every sip with sweetness.</p>
+      </div>
+      <div class="fact-card reveal">
+        <span class="fi">🎻</span>
+        <h3>Mugham Music</h3>
+        <p>Azerbaijan's classical tradition, Mugham, is UNESCO Intangible Heritage, a deeply expressive improvisational form blending poetry, ancient Persian modes, and virtuoso performance on the tar and kamancha.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE BAND -->
+<div class="culture-band">
+  <div class="culture-band-inner">
+    <div class="culture-item">
+      <span class="ci-icon">🤝</span>
+      <h3>Legendary Hospitality</h3>
+      <p>Guests are sacred in Azerbaijani culture. You will never leave an Azerbaijani home without tea, sweets, and a warm welcome.</p>
+    </div>
+    <div class="culture-item">
+      <span class="ci-icon">🎁</span>
+      <h3>Novruz</h3>
+      <p>The ancient spring festival (March 20-21) features bonfires, traditional sweets, wheat sprouts, and coloured eggs for good fortune.</p>
+    </div>
+    <div class="culture-item">
+      <span class="ci-icon">🧵</span>
+      <h3>Carpet Weaving</h3>
+      <p>Azerbaijani carpet weaving is UNESCO Intangible Heritage. Each region has its own patterns and every carpet tells a story.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GIF / ANIMATION SECTION -->
+<section class="section gif-section">
+  <div class="section-inner">
+    <span class="section-label" style="color:var(--gold);">In Motion</span>
+    <h2 class="section-title reveal" style="color:var(--cream);">Azerbaijan <em>Alive</em></h2>
+    <p class="section-body reveal">Drop your GIF files into the <code style="color:var(--gold-lt);font-size:0.9em;">images/</code> folder and update the <code style="color:var(--gold-lt);font-size:0.9em;">src</code> paths below. Recommended: 3-5 second looping GIFs under 2MB each for fast loading on mobile.</p>
+
+    <div class="gif-grid">
+      <div class="gif-slot reveal">
+        <div class="gif-frame">
+          <!-- Replace src with your GIF: e.g. src="images/baku-flames.gif" -->
+          <img src="images/gif-baku.gif" alt="Baku city life" loading="lazy"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="gif-placeholder" style="display:none;">
+            <span class="gp-icon">🏙️</span>
+            <span class="gp-label">baku-flames.gif</span>
+          </div>
+        </div>
+        <div class="gif-body">
+          <h3>Baku by Night</h3>
+          <p>The Flame Towers and Old City skyline lit up after dark. Replace with your own GIF.</p>
+        </div>
+      </div>
+
+      <div class="gif-slot reveal">
+        <div class="gif-frame">
+          <!-- Replace src with your GIF: e.g. src="images/novruz.gif" -->
+          <img src="images/gif-novruz.gif" alt="Novruz celebration" loading="lazy"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="gif-placeholder" style="display:none;">
+            <span class="gp-icon">🔥</span>
+            <span class="gp-label">novruz.gif</span>
+          </div>
+        </div>
+        <div class="gif-body">
+          <h3>Novruz Festival</h3>
+          <p>Bonfires, dancing, and the colours of spring. Our most beloved national celebration.</p>
+        </div>
+      </div>
+
+      <div class="gif-slot reveal">
+        <div class="gif-frame">
+          <!-- Replace src with your GIF: e.g. src="images/pakhlava.gif" -->
+          <img src="images/gif-food.gif" alt="Traditional Azerbaijani food" loading="lazy"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="gif-placeholder" style="display:none;">
+            <span class="gp-icon">🍯</span>
+            <span class="gp-label">pakhlava.gif</span>
+          </div>
+        </div>
+        <div class="gif-body">
+          <h3>Traditional Food</h3>
+          <p>Pakhlava, shekerbura, qutab and more. The flavours that define our culture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESSERTS -->
+<section class="section dark">
+  <div class="section-inner">
+    <span class="section-label">Taste of Azerbaijan</span>
+    <h2 class="section-title reveal">Our National <em>Sweets and Dishes</em></h2>
+    <p class="section-body reveal">Centuries-old recipes prepared with love for every celebration, guest, and gathering. Come taste these traditional delicacies at our booth today.</p>
+
+    <div class="desserts-grid">
+      <div class="dessert-card reveal">
+        <div class="dessert-visual dv-pakhlava">🍯</div>
+        <div class="dessert-body">
+          <div class="dessert-name">Baki Paxlavasi</div>
+          <div class="dessert-alt">Baku Pakhlava</div>
+          <p class="dessert-desc">Diamond-shaped layers of crispy pastry filled with crushed walnuts or hazelnuts, steeped in honey or fragrant sugar syrup, and kissed with saffron. The crown jewel of Azerbaijani sweets and a staple of every Novruz table.</p>
+          <div class="ingredients-label">Key Ingredients</div>
+          <div class="ingredients-list">
+            <span class="ingredient-pill">Thin dough</span>
+            <span class="ingredient-pill">Walnuts</span>
+            <span class="ingredient-pill">Honey</span>
+            <span class="ingredient-pill">Saffron</span>
+            <span class="ingredient-pill">Cardamom</span>
+            <span class="ingredient-pill">Butter</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dessert-card reveal">
+        <div class="dessert-visual dv-shekerbura">🌙</div>
+        <div class="dessert-body">
+          <div class="dessert-name">Sekerbura</div>
+          <div class="dessert-alt">Shekerbura</div>
+          <p class="dessert-desc">A crescent-moon shaped pastry with a delicate shell decorated with intricate pinched patterns. Inside lies a fragrant filling of ground almonds, hazelnuts, and cardamom-spiced sugar. Symbolises the crescent moon on Azerbaijan's flag.</p>
+          <div class="ingredients-label">Key Ingredients</div>
+          <div class="ingredients-list">
+            <span class="ingredient-pill">Flour pastry</span>
+            <span class="ingredient-pill">Almonds</span>
+            <span class="ingredient-pill">Hazelnuts</span>
+            <span class="ingredient-pill">Cardamom</span>
+            <span class="ingredient-pill">Sugar</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dessert-card reveal">
+        <div class="dessert-visual dv-qoqal">🥐</div>
+        <div class="dessert-body">
+          <div class="dessert-name">Qoqal (Sor)</div>
+          <div class="dessert-alt">Savoury Spiral Pastry</div>
+          <p class="dessert-desc">A golden spiral-shaped pastry with a savoury filling of seasoned cottage cheese or salty curd (sor), enriched with butter and spices. Beautifully flaky on the outside, creamy and aromatic within. A beloved snack at any Azerbaijani tea table.</p>
+          <div class="ingredients-label">Key Ingredients</div>
+          <div class="ingredients-list">
+            <span class="ingredient-pill">Flour dough</span>
+            <span class="ingredient-pill">Sor (salty curd)</span>
+            <span class="ingredient-pill">Butter</span>
+            <span class="ingredient-pill">Turmeric</span>
+            <span class="ingredient-pill">Herbs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dessert-card reveal">
+        <div class="dessert-visual dv-murebbe">🍓</div>
+        <div class="dessert-body">
+          <div class="dessert-name">Murebbe (Ciyelek)</div>
+          <div class="dessert-alt">Strawberry Preserve</div>
+          <p class="dessert-desc">Whole strawberries slowly cooked in fragrant sugar syrup until they glisten like jewels. Served alongside hot tea as a spoonful of sweetness, held on the tongue while sipping. A ritual of pure Azerbaijani hospitality.</p>
+          <div class="ingredients-label">Key Ingredients</div>
+          <div class="ingredients-list">
+            <span class="ingredient-pill">Whole strawberries</span>
+            <span class="ingredient-pill">Sugar</span>
+            <span class="ingredient-pill">Lemon juice</span>
+            <span class="ingredient-pill">Vanilla</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dessert-card reveal">
+        <div class="dessert-visual dv-qutab">🫓</div>
+        <div class="dessert-body">
+          <div class="dessert-name">Qutab</div>
+          <div class="dessert-alt">Goy Qutabi (Herb) &bull; Et Qutabi (Meat)</div>
+          <p class="dessert-desc">Thin, crispy half-moon flatbreads cooked on a convex iron griddle called a saj. Filled with fragrant fresh herbs (goy: spinach, coriander, dill, nettles) or spiced ground lamb (et). Finished with a squeeze of pomegranate juice and sumac.</p>
+          <div class="ingredients-label">Herb Filling</div>
+          <div class="ingredients-list">
+            <span class="ingredient-pill">Thin dough</span>
+            <span class="ingredient-pill">Spinach</span>
+            <span class="ingredient-pill">Coriander</span>
+            <span class="ingredient-pill">Dill</span>
+            <span class="ingredient-pill">Sumac</span>
+          </div>
+          <div style="height:8px;"></div>
+          <div class="ingredients-label">Meat Filling</div>
+          <div class="ingredients-list">
+            <span class="ingredient-pill">Thin dough</span>
+            <span class="ingredient-pill">Ground lamb</span>
+            <span class="ingredient-pill">Onion</span>
+            <span class="ingredient-pill">Pomegranate</span>
+            <span class="ingredient-pill">Sumac</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLACES -->
+<section class="section alt">
+  <div class="section-inner">
+    <span class="section-label">Where to Go</span>
+    <h2 class="section-title reveal">Destinations Worth <em>Discovering</em></h2>
+    <p class="section-body reveal">From flame-lit mountaintops to Silk Road citadels, Azerbaijan rewards the curious traveller at every turn.</p>
+    <div class="places-grid">
+      <div class="place-card reveal">
+        <div class="place-thumb pt-baku">🏙️</div>
+        <div class="place-info">
+          <h3>Baku</h3>
+          <p>A dazzling capital where medieval walls meet the Flame Towers. Explore the UNESCO Old City, vibrant Nizami Street, and the Carpet Museum shaped like a rolled carpet.</p>
+        </div>
+      </div>
+      <div class="place-card reveal">
+        <div class="place-thumb pt-gobus">🪨</div>
+        <div class="place-info">
+          <h3>Gobustan</h3>
+          <p>A moonscape of ancient rock art and bubbling mud volcanoes. Over 6,000 petroglyphs record 40,000 years of human presence.</p>
+        </div>
+      </div>
+      <div class="place-card reveal">
+        <div class="place-thumb pt-shaki">🏰</div>
+        <div class="place-info">
+          <h3>Shaki</h3>
+          <p>A Silk Road gem in the Caucasus foothills, home to the breathtaking Khan's Palace with stained-glass shebeke mosaics made without a single nail or glue.</p>
+        </div>
+      </div>
+      <div class="place-card reveal">
+        <div class="place-thumb pt-ydag">🔥</div>
+        <div class="place-info">
+          <h3>Yanar Dag</h3>
+          <p>The "Burning Mountain," a hillside that has been naturally ablaze for centuries. Ancient fire-worshippers once traveled here to witness this geological miracle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- JOIN BANNER -->
+<div class="join-banner">
+  <h2>Connect with SJTU.AZ</h2>
+  <p>Join the Azerbaijani Students Association at SJTU. Open to students across all campuses and friends who love cultural exchange.</p>
+  <div class="join-btns">
+    <a href="join.html" class="btn primary">Join the Community</a>
+    <a href="https://www.instagram.com/sjtu.az/" class="btn ghost" target="_blank" rel="noopener">@sjtu.az on Instagram</a>
+    <a href="mailto:yusifmammadov@sjtu.edu.cn" class="btn ghost">Email Us</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html">
+        <img src="images/az-flag.png" alt="Azerbaijan flag">
+        SJTU.AZ
+      </a>
+      <p>Azerbaijani Students Association at SJTU &bull; Cultural Festival 2025 &bull; Shanghai, China</p>
+    </div>
+    <nav class="footer-links">
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="team.html">Team</a>
+      <a href="join.html">Join</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
