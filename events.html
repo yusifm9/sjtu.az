@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Events &bull; Azerbaijani Students Association at SJTU</title>
-  <meta name="description" content="Events hosted by the Azerbaijani Students Association at Shanghai Jiao Tong University.">
+  <title data-en="Events &bull; Azerbaijani Students Association at SJTU" data-zh="活动 &bull; 上海交通大学阿塞拜疆学生协会">Events &bull; Azerbaijani Students Association at SJTU</title>
+  <meta name="description" content="Events hosted by the Azerbaijani Students Association at Shanghai Jiao Tong University." data-target-attr="content" data-en-attr="Events hosted by the Azerbaijani Students Association at Shanghai Jiao Tong University." data-zh-attr="上海交通大学阿塞拜疆学生协会举办的活动。">
   <link rel="icon" type="image/png" href="images/logo-mark.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,23 +17,32 @@
       <span class="logo-text-main">SJTU.AZ</span>
     </a>
     <nav class="header-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="join.html">Join</a>
-      <a href="booth.html" style="color:var(--gold-lt);border-bottom:2px solid var(--gold);">Booth</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="events.html" data-i18n="nav_events">Events</a>
+      <a href="join.html" data-i18n="nav_join">Join</a>
+      <a href="booth.html" style="color:var(--gold-lt);border-bottom:2px solid var(--gold);" data-i18n="nav_booth">Booth</a>
     </nav>
+    <div class="lang-switch" aria-label="Language switch">
+      <button class="lang-btn" type="button" data-lang="en">EN</button>
+      <button class="lang-btn" type="button" data-lang="zh">中文</button>
+    </div>
     <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 <nav class="mobile-nav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="events.html">Events</a>
-  <a href="join.html">Join</a>
-  <a href="booth.html" style="color:var(--gold-lt);">Booth</a>
+
+  <div class="lang-switch mobile-lang-switch" aria-label="Language switch">
+    <button class="lang-btn" type="button" data-lang="en">EN</button>
+    <button class="lang-btn" type="button" data-lang="zh">中文</button>
+  </div>
+  <a href="index.html" data-i18n="nav_home">Home</a>
+  <a href="about.html" data-i18n="nav_about">About</a>
+  <a href="events.html" data-i18n="nav_events">Events</a>
+  <a href="join.html" data-i18n="nav_join">Join</a>
+  <a href="booth.html" style="color:var(--gold-lt);" data-i18n="nav_booth">Booth</a>
 </nav>
 
 <section class="hero">
@@ -49,18 +58,18 @@
   </svg>
   <div class="hero-inner" style="grid-template-columns:1fr 1fr;">
     <div>
-      <div class="hero-tag anim-1">SJTU.AZ Activity</div>
-      <h1 class="hero-title anim-2">Our <em>Events</em></h1>
-      <p class="hero-subtitle anim-3">A focused overview of our latest activity and what is coming next.</p>
+      <div class="hero-tag anim-1"><span data-en="SJTU.AZ Activity" data-zh="SJTU.AZ 动态">SJTU.AZ Activity</span></div>
+      <h1 class="hero-title anim-2">Our <em data-i18n="nav_events">Events</em></h1>
+      <p class="hero-subtitle anim-3"><span data-en="A focused overview of our latest activity and what is coming next." data-zh="这里汇总了我们最近的活动，以及接下来即将举行的安排。">A focused overview of our latest activity and what is coming next.</span></p>
       <div class="hero-actions anim-4">
-        <a class="btn primary" href="join.html">Join Us</a>
-        <a class="btn ghost" href="join.html">Join Us</a>
+        <a class="btn primary" href="join.html"><span data-en="Join Us" data-zh="加入我们">Join Us</span></a>
+        <a class="btn ghost" href="join.html"><span data-en="Join Us" data-zh="加入我们">Join Us</span></a>
       </div>
     </div>
     <aside class="hero-card anim-3">
-      <h3>Next Up</h3>
+      <h3><span data-en="Next Up" data-zh="下一场">Next Up</span></h3>
       <h4>SJTU Cultural Festival</h4>
-      <p>Representing Azerbaijan at the university's biggest cultural event of the year.</p>
+      <p><span data-en="Representing Azerbaijan at the university's biggest cultural event of the year." data-zh="在学校年度最大文化活动中代表阿塞拜疆亮相。">Representing Azerbaijan at the university's biggest cultural event of the year.</span></p>
       <p class="meta">Early April (TBA) &bull; Minhang Campus</p>
     </aside>
   </div>
@@ -69,20 +78,20 @@
 <!-- UPCOMING -->
 <section class="section alt">
   <div class="section-inner">
-    <span class="section-label">What Is Coming</span>
-    <h2 class="section-title reveal">Upcoming <em>Event</em></h2>
+    <span class="section-label"><span data-en="What Is Coming" data-zh="即将举行">What Is Coming</span></span>
+    <h2 class="section-title reveal"><span data-en="Upcoming <em>Event</em>" data-zh="近期<em>活动</em>">Upcoming <em>Event</em></span></h2>
 
     <article class="event-article reveal" style="border-top:3px solid var(--az-red);">
       <div class="event-top">
-        <span class="event-tag featured"><span class="dot"></span>Upcoming</span>
+        <span class="event-tag featured"><span class="dot"></span><span data-en="Upcoming" data-zh="即将举行">Upcoming</span></span>
         <span class="event-meta">Early April (TBA)</span>
       </div>
       <h3>SJTU Cultural Festival</h3>
-      <p>SJTU.AZ is going to represent Azerbaijan at the Cultural Festival of SJTU, the largest cultural event in the university, related to the 130th anniversary of the university. We will showcase culture, traditions, food, and community. Come visit our booth and meet the team!</p>
+      <p><span data-en="SJTU.AZ is going to represent Azerbaijan at the Cultural Festival of SJTU, the largest cultural event in the university, related to the 130th anniversary of the university. We will showcase culture, traditions, food, and community. Come visit our booth and meet the team!" data-zh="SJTU.AZ 将在上海交大文化节上代表阿塞拜疆。该活动是学校规模最大的文化活动之一，也是 130 周年校庆的重要内容。我们将展示阿塞拜疆的文化、传统、美食与社群。欢迎来到我们的展位与我们交流！">SJTU.AZ is going to represent Azerbaijan at the Cultural Festival of SJTU, the largest cultural event in the university, related to the 130th anniversary of the university. We will showcase culture, traditions, food, and community. Come visit our booth and meet the team!</span></p>
       <div class="kv">
-        <div>Date</div><div>To be announced (early April)</div>
-        <div>Location</div><div>SJTU Minhang Campus</div>
-        <div>Our Booth</div><div><a class="link" href="booth.html">Preview what we are presenting &rarr;</a></div>
+        <div><span data-en="Date" data-zh="日期">Date</span></div><div><span data-en="To be announced (early April)" data-zh="待公布（四月上旬）">To be announced (early April)</span></div>
+        <div><span data-en="Location" data-zh="地点">Location</span></div><div>SJTU Minhang Campus</div>
+        <div><span data-en="Our Booth" data-zh="我们的展位">Our Booth</span></div><div><a class="link" href="booth.html"><span data-en="Preview what we are presenting &rarr;" data-zh="查看展位内容 &rarr;">Preview what we are presenting &rarr;</span></a></div>
       </div>
     </article>
   </div>
@@ -91,16 +100,16 @@
 <!-- FEATURED PAST -->
 <section class="section">
   <div class="section-inner">
-    <span class="section-label">Featured Last Event</span>
-    <h2 class="section-title reveal">Community <em>Meetup</em></h2>
+    <span class="section-label"><span data-en="Featured Last Event" data-zh="上一次重点活动">Featured Last Event</span></span>
+    <h2 class="section-title reveal"><span data-en="Community <em>Meetup</em>" data-zh="社群<em>聚会</em>">Community <em>Meetup</em></span></h2>
 
     <article class="event-article reveal">
       <div class="event-top">
-        <span class="event-tag"><span class="dot"></span>Featured</span>
-        <span class="event-meta">Recent</span>
+        <span class="event-tag"><span class="dot"></span><span data-en="Featured" data-zh="精选">Featured</span></span>
+        <span class="event-meta"><span data-en="Recent" data-zh="近期">Recent</span></span>
       </div>
       <h3>Community Meetup</h3>
-      <p>Introductions, networking, and sharing practical resources for student life at SJTU. Members from both Minhang and Xuhui campuses came together to meet, exchange contacts, and discuss how the association can best support the community going forward.</p>
+      <p><span data-en="Introductions, networking, and sharing practical resources for student life at SJTU. Members from both Minhang and Xuhui campuses came together to meet, exchange contacts, and discuss how the association can best support the community going forward." data-zh="活动包括成员自我介绍、交流联系、分享交大学习生活中的实用资源。来自闵行和徐汇校区的同学齐聚一堂，互相认识，也一起讨论协会未来如何更好地支持大家。">Introductions, networking, and sharing practical resources for student life at SJTU. Members from both Minhang and Xuhui campuses came together to meet, exchange contacts, and discuss how the association can best support the community going forward.</span></p>
     </article>
   </div>
 </section>
@@ -108,29 +117,29 @@
 <!-- HISTORY -->
 <section class="section dark">
   <div class="section-inner">
-    <span class="section-label">Past Events</span>
-    <h2 class="section-title reveal">Event <em>History</em></h2>
+    <span class="section-label"><span data-en="Past Events" data-zh="往期活动">Past Events</span></span>
+    <h2 class="section-title reveal"><span data-en="Event <em>History</em>" data-zh="活动<em>回顾</em>">Event <em>History</em></span></h2>
     <div class="cards-grid">
       <div class="card dark-card reveal">
         <span class="card-icon">👋</span>
-        <h3>Welcome Meetup</h3>
-        <p>Our very first gathering. Community introductions, group setup, and the beginning of SJTU.AZ as a formal organisation.</p>
+        <h3><span data-en="Welcome Meetup" data-zh="迎新聚会">Welcome Meetup</span></h3>
+        <p><span data-en="Our very first gathering. Community introductions, group setup, and the beginning of SJTU.AZ as a formal organisation." data-zh="这是我们的第一次正式聚会，包括成员认识、群组建立，也标志着 SJTU.AZ 作为正式组织的开始。">Our very first gathering. Community introductions, group setup, and the beginning of SJTU.AZ as a formal organisation.</span></p>
       </div>
       <div class="card dark-card reveal">
         <span class="card-icon">🎉</span>
-        <h3>Cultural Gathering</h3>
-        <p>Sharing traditions, food, and stories. An evening of connection for Azerbaijani students across Shanghai.</p>
+        <h3><span data-en="Cultural Gathering" data-zh="文化交流活动">Cultural Gathering</span></h3>
+        <p><span data-en="Sharing traditions, food, and stories. An evening of connection for Azerbaijani students across Shanghai." data-zh="分享传统、美食与故事，为在上海的阿塞拜疆学生创造一个彼此连接的夜晚。">Sharing traditions, food, and stories. An evening of connection for Azerbaijani students across Shanghai.</span></p>
       </div>
     </div>
   </div>
 </section>
 
 <div class="join-banner">
-  <h2>Stay Up to Date</h2>
-  <p>Join our community to receive announcements, event invitations, and updates directly.</p>
+  <h2>Stay Up to <span data-en="Date" data-zh="日期">Date</span></h2>
+  <p><span data-en="Join our community to receive announcements, event invitations, and updates directly." data-zh="加入我们的社群，第一时间接收通知、活动邀请和最新消息。">Join our community to receive announcements, event invitations, and updates directly.</span></p>
   <div class="join-btns">
-    <a class="btn primary" href="join.html">Join the Community</a>
-    <a class="btn ghost" href="https://www.instagram.com/sjtu.az/" target="_blank" rel="noopener">Follow on Instagram</a>
+    <a class="btn primary" href="join.html"><span data-en="Join the Community" data-zh="加入社群">Join the Community</span></a>
+    <a class="btn ghost" href="https://www.instagram.com/sjtu.az/" target="_blank" rel="noopener"><span data-en="Follow on Instagram" data-zh="关注 Instagram">Follow on Instagram</span></a>
   </div>
 </div>
 
@@ -141,13 +150,13 @@
         <img src="images/az-flag.png" alt="Azerbaijan flag">
         SJTU.AZ
       </a>
-      <p>Azerbaijani Students Association at Shanghai Jiao Tong University &bull; Shanghai, China</p>
+      <p><span data-en="Azerbaijani Students Association at Shanghai Jiao Tong University &bull; Shanghai, China" data-zh="上海交通大学阿塞拜疆学生协会 &bull; 中国上海">Azerbaijani Students Association at Shanghai Jiao Tong University &bull; Shanghai, China</span></p>
     </div>
     <nav class="footer-links">
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="join.html">Join</a>
-      <a href="booth.html">Booth</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="events.html" data-i18n="nav_events">Events</a>
+      <a href="join.html" data-i18n="nav_join">Join</a>
+      <a href="booth.html" data-i18n="nav_booth">Booth</a>
     </nav>
   </div>
 </footer>

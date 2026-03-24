@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About &bull; Azerbaijani Students Association at SJTU</title>
-  <meta name="description" content="About the Azerbaijani Students Association at Shanghai Jiao Tong University.">
+  <title data-en="About &bull; Azerbaijani Students Association at SJTU" data-zh="关于我们 &bull; 上海交通大学阿塞拜疆学生协会">About &bull; Azerbaijani Students Association at SJTU</title>
+  <meta name="description" content="About the Azerbaijani Students Association at Shanghai Jiao Tong University." data-target-attr="content" data-en-attr="About the Azerbaijani Students Association at Shanghai Jiao Tong University." data-zh-attr="了解上海交通大学阿塞拜疆学生协会。">
   <link rel="icon" type="image/png" href="images/logo-mark.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,23 +17,32 @@
       <span class="logo-text-main">SJTU.AZ</span>
     </a>
     <nav class="header-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="join.html">Join</a>
-      <a href="booth.html" style="color:var(--gold-lt);border-bottom:2px solid var(--gold);">Booth</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="events.html" data-i18n="nav_events">Events</a>
+      <a href="join.html" data-i18n="nav_join">Join</a>
+      <a href="booth.html" style="color:var(--gold-lt);border-bottom:2px solid var(--gold);" data-i18n="nav_booth">Booth</a>
     </nav>
+    <div class="lang-switch" aria-label="Language switch">
+      <button class="lang-btn" type="button" data-lang="en">EN</button>
+      <button class="lang-btn" type="button" data-lang="zh">中文</button>
+    </div>
     <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 <nav class="mobile-nav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="events.html">Events</a>
-  <a href="join.html">Join</a>
-  <a href="booth.html" style="color:var(--gold-lt);">Booth</a>
+
+  <div class="lang-switch mobile-lang-switch" aria-label="Language switch">
+    <button class="lang-btn" type="button" data-lang="en">EN</button>
+    <button class="lang-btn" type="button" data-lang="zh">中文</button>
+  </div>
+  <a href="index.html" data-i18n="nav_home">Home</a>
+  <a href="about.html" data-i18n="nav_about">About</a>
+  <a href="events.html" data-i18n="nav_events">Events</a>
+  <a href="join.html" data-i18n="nav_join">Join</a>
+  <a href="booth.html" style="color:var(--gold-lt);" data-i18n="nav_booth">Booth</a>
 </nav>
 
 <section class="hero">
@@ -50,12 +59,12 @@
   </svg>
   <div class="hero-inner" style="grid-template-columns:1fr;">
     <div style="max-width:680px;">
-      <div class="hero-tag anim-1">About Us</div>
-      <h1 class="hero-title anim-2">A Community <em>Built on Connection</em></h1>
-      <p class="hero-subtitle anim-3">Supporting Azerbaijani students and representing culture at Shanghai Jiao Tong University since early 2025.</p>
+      <div class="hero-tag anim-1"><span data-en="About Us" data-zh="关于我们">About Us</span></div>
+      <h1 class="hero-title anim-2"><span data-en="A Community <em>Built on Connection</em>" data-zh="一个因连接而生的<em>社群</em>">A Community <em>Built on Connection</em></span></h1>
+      <p class="hero-subtitle anim-3"><span data-en="Supporting Azerbaijani students and representing culture at Shanghai Jiao Tong University since early 2025." data-zh="自 2025 年初以来，我们持续为上海交通大学的阿塞拜疆学生提供支持，并积极展示本国文化。">Supporting Azerbaijani students and representing culture at Shanghai Jiao Tong University since early 2025.</span></p>
       <div class="hero-actions anim-4">
-        <a class="btn primary" href="join.html">Join Us</a>
-        <a class="btn ghost" href="events.html">Our Events</a>
+        <a class="btn primary" href="join.html"><span data-en="Join Us" data-zh="加入我们">Join Us</span></a>
+        <a class="btn ghost" href="events.html"><span data-en="Our Events" data-zh="我们的活动">Our Events</span></a>
       </div>
     </div>
   </div>
@@ -64,10 +73,10 @@
 <!-- MISSION -->
 <section class="section alt">
   <div class="section-inner">
-    <span class="section-label">Why We Exist</span>
-    <h2 class="section-title reveal">Our <em>Mission</em></h2>
+    <span class="section-label"><span data-en="Why We Exist" data-zh="我们的初心">Why We Exist</span></span>
+    <h2 class="section-title reveal"><span data-en="Our <em>Mission</em>" data-zh="我们的<em>使命</em>">Our <em>Mission</em></span></h2>
     <div class="surface reveal">
-      <p>We were created in early 2025 to combine and unite all Azerbaijani students across all campuses of SJTU. We aim to build a reliable peer network for academic and everyday support, help new students integrate smoothly, and create a strong sense of community. In parallel, we promote Azerbaijani culture through respectful representation and participation in university-wide activities.</p>
+      <p><span data-en="We were created in early 2025 to combine and unite all Azerbaijani students across all campuses of SJTU. We aim to build a reliable peer network for academic and everyday support, help new students integrate smoothly, and create a strong sense of community. In parallel, we promote Azerbaijani culture through respectful representation and participation in university-wide activities." data-zh="我们成立于 2025 年初，旨在凝聚上海交通大学各校区的阿塞拜疆学生。我们希望建立一个可靠的同伴支持网络，为大家提供学业与日常生活上的帮助，协助新同学顺利融入校园，并培育强烈的社群归属感。同时，我们也通过参与学校活动、开展文化展示，以真诚而得体的方式传播阿塞拜疆文化。">We were created in early 2025 to combine and unite all Azerbaijani students across all campuses of SJTU. We aim to build a reliable peer network for academic and everyday support, help new students integrate smoothly, and create a strong sense of community. In parallel, we promote Azerbaijani culture through respectful representation and participation in university-wide activities.</span></p>
     </div>
 
     <div style="height:1.4rem;"></div>
@@ -75,18 +84,18 @@
     <div class="cards-grid">
       <div class="card reveal">
         <span class="card-icon">🤝</span>
-        <h3>Community Support</h3>
-        <p>Practical help, peer guidance, and a welcoming environment for new and current students navigating life at SJTU.</p>
+        <h3><span data-en="Community Support" data-zh="社群支持">Community Support</span></h3>
+        <p><span data-en="Practical help, peer guidance, and a welcoming environment for new and current students navigating life at SJTU." data-zh="为新老同学提供实用帮助、同伴建议，以及一个温暖友好的交大生活环境。">Practical help, peer guidance, and a welcoming environment for new and current students navigating life at SJTU.</span></p>
       </div>
       <div class="card reveal">
         <span class="card-icon">🎭</span>
-        <h3>Cultural Representation</h3>
-        <p>Participation in festivals and events that bring Azerbaijani culture to the wider SJTU community with pride.</p>
+        <h3><span data-en="Cultural Representation" data-zh="文化展示">Cultural Representation</span></h3>
+        <p><span data-en="Participation in festivals and events that bring Azerbaijani culture to the wider SJTU community with pride." data-zh="通过节庆与校园活动，把阿塞拜疆文化自豪而真诚地带给更广泛的交大社群。">Participation in festivals and events that bring Azerbaijani culture to the wider SJTU community with pride.</span></p>
       </div>
       <div class="card reveal">
         <span class="card-icon">🌐</span>
-        <h3>Peer Network</h3>
-        <p>Connecting students across Minhang and Xuhui campuses so no one navigates the Shanghai experience alone.</p>
+        <h3><span data-en="Peer Network" data-zh="同伴网络">Peer Network</span></h3>
+        <p><span data-en="Connecting students across Minhang and Xuhui campuses so no one navigates the Shanghai experience alone." data-zh="连接闵行与徐汇校区的同学，让每个人在上海的留学生活都不必独自面对。">Connecting students across Minhang and Xuhui campuses so no one navigates the Shanghai experience alone.</span></p>
       </div>
     </div>
   </div>
@@ -95,10 +104,10 @@
 <!-- STORY -->
 <section class="section dark">
   <div class="section-inner">
-    <span class="section-label">Our Story</span>
-    <h2 class="section-title reveal">How We <em>Started</em></h2>
+    <span class="section-label"><span data-en="Our Story" data-zh="我们的故事">Our Story</span></span>
+    <h2 class="section-title reveal"><span data-en="How We <em>Started</em>" data-zh="我们如何<em>起步</em>">How We <em>Started</em></span></h2>
     <div class="surface reveal" style="background:rgba(255,255,255,0.06);border-color:rgba(201,168,76,0.3);">
-      <p style="color:rgba(255,255,255,0.72);">SJTU.AZ was founded in early 2025 by Azerbaijani students who recognised the need for a dedicated community at one of China's most prestigious universities. What began as informal meetups grew into a structured association registered with the International Student Community at SJTU. Today we are an active presence on campus, representing Azerbaijan at university events and building a support network that every Azerbaijani student at SJTU can rely on.</p>
+      <p style="color:rgba(255,255,255,0.72);"><span data-en="SJTU.AZ was founded in early 2025 by Azerbaijani students who recognised the need for a dedicated community at one of China's most prestigious universities. What began as informal meetups grew into a structured association registered with the International Student Community at SJTU. Today we are an active presence on campus, representing Azerbaijan at university events and building a support network that every Azerbaijani student at SJTU can rely on." data-zh="SJTU.AZ 由阿塞拜疆学生于 2025 年初创立。大家意识到，在中国最具声望的高校之一，需要一个专属于阿塞拜疆学生的社群。从最初的非正式聚会开始，我们逐步发展为在上海交大国际学生社群中注册的正式协会。如今，我们已成为校园里的活跃力量，在学校活动中代表阿塞拜疆，也持续建设一个让每位交大阿塞拜疆学生都能依靠的支持网络。">SJTU.AZ was founded in early 2025 by Azerbaijani students who recognised the need for a dedicated community at one of China's most prestigious universities. What began as informal meetups grew into a structured association registered with the International Student Community at SJTU. Today we are an active presence on campus, representing Azerbaijan at university events and building a support network that every Azerbaijani student at SJTU can rely on.</span></p>
     </div>
 
     <div style="height:1.4rem;"></div>
@@ -106,18 +115,18 @@
     <div class="cards-grid">
       <div class="card dark-card reveal">
         <span class="card-icon">📅</span>
-        <h3>Established Early 2025</h3>
-        <p>Founded to connect Azerbaijani students across all SJTU campuses.</p>
+        <h3><span data-en="Established Early 2025" data-zh="成立于 2025 年初">Established Early 2025</span></h3>
+        <p><span data-en="Founded to connect Azerbaijani students across all SJTU campuses." data-zh="成立的初衷，是连接上海交大各校区的阿塞拜疆学生。">Founded to connect Azerbaijani students across all SJTU campuses.</span></p>
       </div>
       <div class="card dark-card reveal">
         <span class="card-icon">🏫</span>
-        <h3>Multi-Campus Reach</h3>
-        <p>Active presence on Minhang and Xuhui campuses, with representatives on both.</p>
+        <h3><span data-en="Multi-Campus Reach" data-zh="跨校区覆盖">Multi-Campus Reach</span></h3>
+        <p><span data-en="Active presence on Minhang and Xuhui campuses, with representatives on both." data-zh="在闵行与徐汇校区均有活跃成员与代表。">Active presence on Minhang and Xuhui campuses, with representatives on both.</span></p>
       </div>
       <div class="card dark-card reveal">
         <span class="card-icon">🎪</span>
-        <h3>Growing Events Calendar</h3>
-        <p>From welcome meetups to the SJTU Cultural Festival, our events calendar continues to grow.</p>
+        <h3><span data-en="Growing Events Calendar" data-zh="不断扩展的活动计划">Growing Events Calendar</span></h3>
+        <p><span data-en="From welcome meetups to the SJTU Cultural Festival, our events calendar continues to grow." data-zh="从迎新聚会到上海交大文化节，我们的活动内容还在不断丰富。">From welcome meetups to the SJTU Cultural Festival, our events calendar continues to grow.</span></p>
       </div>
     </div>
   </div>
@@ -125,11 +134,11 @@
 
 <!-- CTA -->
 <div class="join-banner">
-  <h2>Become Part of the Story</h2>
-  <p>Whether you are a new arrival or have been at SJTU for years, there is a place for you here.</p>
+  <h2><span data-en="Become Part of the Story" data-zh="成为这段故事的一部分">Become Part of the Story</span></h2>
+  <p><span data-en="Whether you are a new arrival or have been at SJTU for years, there is a place for you here." data-zh="无论你刚来到交大，还是已经在这里学习多年，这里都有属于你的位置。">Whether you are a new arrival or have been at SJTU for years, there is a place for you here.</span></p>
   <div class="join-btns">
-    <a class="btn primary" href="join.html">Join Us</a>
-    <a class="btn outline ghost" href="join.html">Join the Community</a>
+    <a class="btn primary" href="join.html"><span data-en="Join Us" data-zh="加入我们">Join Us</span></a>
+    <a class="btn outline ghost" href="join.html"><span data-en="Join the Community" data-zh="加入社群">Join the Community</span></a>
   </div>
 </div>
 
@@ -140,13 +149,13 @@
         <img src="images/az-flag.png" alt="Azerbaijan flag">
         SJTU.AZ
       </a>
-      <p>Azerbaijani Students Association at Shanghai Jiao Tong University &bull; Shanghai, China</p>
+      <p><span data-en="Azerbaijani Students Association at Shanghai Jiao Tong University &bull; Shanghai, China" data-zh="上海交通大学阿塞拜疆学生协会 &bull; 中国上海">Azerbaijani Students Association at Shanghai Jiao Tong University &bull; Shanghai, China</span></p>
     </div>
     <nav class="footer-links">
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="join.html">Join</a>
-      <a href="booth.html">Booth</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="events.html" data-i18n="nav_events">Events</a>
+      <a href="join.html" data-i18n="nav_join">Join</a>
+      <a href="booth.html" data-i18n="nav_booth">Booth</a>
     </nav>
   </div>
 </footer>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Team &bull; Azerbaijani Students Association at SJTU</title>
-  <meta name="description" content="Meet the team behind the Azerbaijani Students Association at Shanghai Jiao Tong University.">
+  <title data-en="Team &bull; Azerbaijani Students Association at SJTU" data-zh="团队 &bull; 上海交通大学阿塞拜疆学生协会">Team &bull; Azerbaijani Students Association at SJTU</title>
+  <meta name="description" content="Meet the team behind the Azerbaijani Students Association at Shanghai Jiao Tong University." data-target-attr="content" data-en-attr="Meet the team behind the Azerbaijani Students Association at Shanghai Jiao Tong University." data-zh-attr="认识上海交通大学阿塞拜疆学生协会背后的团队。">
   <link rel="icon" type="image/png" href="images/logo-mark.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,23 +17,32 @@
       <span class="logo-text-main">SJTU.AZ</span>
     </a>
     <nav class="header-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="join.html">Join</a>
-      <a href="booth.html" style="color:var(--gold-lt);border-bottom:2px solid var(--gold);">Booth</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="events.html" data-i18n="nav_events">Events</a>
+      <a href="join.html" data-i18n="nav_join">Join</a>
+      <a href="booth.html" style="color:var(--gold-lt);border-bottom:2px solid var(--gold);" data-i18n="nav_booth">Booth</a>
     </nav>
+    <div class="lang-switch" aria-label="Language switch">
+      <button class="lang-btn" type="button" data-lang="en">EN</button>
+      <button class="lang-btn" type="button" data-lang="zh">中文</button>
+    </div>
     <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 <nav class="mobile-nav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="events.html">Events</a>
-  <a href="join.html">Join</a>
-  <a href="booth.html" style="color:var(--gold-lt);">Booth</a>
+
+  <div class="lang-switch mobile-lang-switch" aria-label="Language switch">
+    <button class="lang-btn" type="button" data-lang="en">EN</button>
+    <button class="lang-btn" type="button" data-lang="zh">中文</button>
+  </div>
+  <a href="index.html" data-i18n="nav_home">Home</a>
+  <a href="about.html" data-i18n="nav_about">About</a>
+  <a href="events.html" data-i18n="nav_events">Events</a>
+  <a href="join.html" data-i18n="nav_join">Join</a>
+  <a href="booth.html" style="color:var(--gold-lt);" data-i18n="nav_booth">Booth</a>
 </nav>
 
 <section class="hero">
@@ -49,9 +58,9 @@
   </svg>
   <div class="hero-inner" style="grid-template-columns:1fr 1fr;">
     <div>
-      <div class="hero-tag anim-1">The People</div>
-      <h1 class="hero-title anim-2">Our <em>Team</em></h1>
-      <p class="hero-subtitle anim-3">The students leading and representing the Azerbaijani community at SJTU.</p>
+      <div class="hero-tag anim-1"><span data-en="The People" data-zh="团队成员">The People</span></div>
+      <h1 class="hero-title anim-2"><span data-en="Our <em>Team</em>" data-zh="我们的<em>团队</em>">Our <em>Team</em></span></h1>
+      <p class="hero-subtitle anim-3"><span data-en="The students leading and representing the Azerbaijani community at SJTU." data-zh="在上海交大带领并代表阿塞拜疆学生社群的同学们。">The students leading and representing the Azerbaijani community at SJTU.</span></p>
     </div>
     <aside class="hero-card anim-3">
       <h3>Structure</h3>
@@ -159,10 +168,10 @@
       <p>Azerbaijani Students Association at Shanghai Jiao Tong University &bull; Shanghai, China</p>
     </div>
     <nav class="footer-links">
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="join.html">Join</a>
-      <a href="booth.html">Booth</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="events.html" data-i18n="nav_events">Events</a>
+      <a href="join.html" data-i18n="nav_join">Join</a>
+      <a href="booth.html" data-i18n="nav_booth">Booth</a>
     </nav>
   </div>
 </footer>
