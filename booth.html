@@ -39,6 +39,18 @@
       padding: 1.5rem 1.7rem; border-radius: var(--radius);
       transition: transform .2s, box-shadow .2s;
     }
+    .fact-image, .place-image, .dessert-image {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      background: rgba(0,0,0,0.06);
+    }
+    .fact-image {
+      aspect-ratio: 16/10;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(201,168,76,0.18);
+    }
     .fact-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(26,18,10,0.1); }
     .fact-card .fi { font-size: 1.8rem; margin-bottom: 0.7rem; display: block; }
     .fact-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight:700; color:var(--ink); margin-bottom:0.4rem; }
@@ -97,14 +109,14 @@
     }
     .dessert-card:hover { transform: translateY(-5px); border-color: var(--gold); }
     .dessert-visual {
-      height: 130px; display: flex; align-items: center;
-      justify-content: center; font-size: 4.5rem;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(201,168,76,0.18);
     }
-    .dv-pakhlava   { background: linear-gradient(135deg,#7B4A1A,#C9852C,#8B4513); }
-    .dv-shekerbura { background: linear-gradient(135deg,#B8860B,#DAA520,#CD853F); }
-    .dv-qoqal      { background: linear-gradient(135deg,#5C3317,#A0522D,#6B3A2A); }
-    .dv-murebbe    { background: linear-gradient(135deg,#8B0000,#DC143C,#A52020); }
-    .dv-qutab      { background: linear-gradient(135deg,#2D5A27,#4A7C40,#355E30); }
+    .dessert-image {
+      height: 100%;
+    }
     .dessert-body  { padding: 1.3rem 1.5rem 1.7rem; }
     .dessert-name  { font-family:'Playfair Display',serif; font-size:1.25rem; font-weight:700; color:var(--gold-lt); margin-bottom:0.2rem; }
     .dessert-alt   { font-size:0.8rem; color:rgba(255,255,255,0.4); font-style:italic; margin-bottom:0.7rem; }
@@ -122,13 +134,13 @@
     }
     .place-card:hover { box-shadow: 0 8px 32px rgba(26,18,10,0.1); }
     .place-thumb {
-      height: 110px; display: flex; align-items: center;
-      justify-content: center; font-size: 3rem;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: rgba(0,0,0,0.06);
     }
-    .pt-baku   { background: linear-gradient(135deg,#0d2137,#0a4b6e); }
-    .pt-gobus  { background: linear-gradient(135deg,#3d2b0e,#7a5523); }
-    .pt-shaki  { background: linear-gradient(135deg,#1b3d1a,#3a7a38); }
-    .pt-ydag   { background: linear-gradient(135deg,#3d1700,#8b3000); }
+    .place-image {
+      height: 100%;
+    }
     .place-info { padding: 1.1rem 1.3rem; }
     .place-info h3 { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:0.3rem; }
     .place-info p  { font-size:0.86rem; color:var(--ink-soft); line-height:1.6; }
@@ -157,7 +169,6 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="events.html">Events</a>
-      <a href="team.html">Team</a>
       <a href="join.html">Join</a>
       <a href="booth.html" style="color:var(--gold-lt);border-bottom:2px solid var(--gold);">Booth</a>
     </nav>
@@ -170,7 +181,6 @@
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="events.html">Events</a>
-  <a href="team.html">Team</a>
   <a href="join.html">Join</a>
   <a href="booth.html" style="color:var(--gold-lt);">Booth</a>
 </nav>
@@ -229,47 +239,47 @@
 
     <div class="facts-grid">
       <div class="fact-card reveal">
-        <span class="fi">🔥</span>
+        <img class="fact-image" src="images/f1.png" alt="Land of Eternal Flame" loading="lazy">
         <h3>Land of Eternal Flame</h3>
         <p>Yanar Dag, "Burning Mountain," has blazed continuously for centuries on the Absheron Peninsula, fuelled by natural gas seeping through the rocks. Ancient fire-worshippers made pilgrimage here long before the oil age began.</p>
       </div>
       <div class="fact-card reveal">
-        <span class="fi">🌍</span>
+        <img class="fact-image" src="images/f2.png" alt="World's Lowest Capital" loading="lazy">
         <h3>World's Lowest Capital</h3>
         <p>Baku sits 28 metres below sea level on the Caspian coast, making it the world's lowest-lying capital city, lower even than Amsterdam. Its name may derive from "Bad-kube," meaning City of Winds.</p>
       </div>
       <div class="fact-card reveal">
-        <span class="fi">⛽</span>
+        <img class="fact-image" src="images/f3.png" alt="Oil Pioneer" loading="lazy">
         <h3>Oil Pioneer</h3>
         <p>In 1901, Azerbaijani oilfields supplied over half of the entire world's oil. The world's first industrial oil well was drilled near Baku in 1848, decades before the famous Pennsylvania strikes.</p>
       </div>
       <div class="fact-card reveal">
-        <span class="fi">🗳️</span>
+        <img class="fact-image" src="images/f4.png" alt="First Muslim Democracy" loading="lazy">
         <h3>First Muslim Democracy</h3>
         <p>In 1918, the Azerbaijan Democratic Republic became the first secular democracy in the Muslim world, granting women the right to vote, two years before the United States and a decade before Great Britain.</p>
       </div>
       <div class="fact-card reveal">
-        <span class="fi">🌋</span>
+        <img class="fact-image" src="images/f5.png" alt="Mud Volcano Capital" loading="lazy">
         <h3>Mud Volcano Capital</h3>
         <p>Azerbaijan has around 350 mud volcanoes, more than any other country on earth. The Gobustan region's volcanic landscape is over 20 million years old and part of a UNESCO World Heritage Site.</p>
       </div>
       <div class="fact-card reveal">
-        <span class="fi">🏛️</span>
+        <img class="fact-image" src="images/f6.png" alt="UNESCO Old City" loading="lazy">
         <h3>UNESCO Old City</h3>
         <p>Baku's Icherisheher (Inner City), enclosed by 12th-century walls, is a UNESCO World Heritage Site. The iconic Maiden Tower and Shirvanshahs' Palace stand as testament to Azerbaijan's medieval grandeur.</p>
       </div>
       <div class="fact-card reveal">
-        <span class="fi">🪨</span>
+        <img class="fact-image" src="images/f7.png" alt="40,000-Year-Old Art" loading="lazy">
         <h3>40,000-Year-Old Art</h3>
         <p>Gobustan is home to over 6,000 rock engravings dating back more than 40,000 years, one of the richest collections of prehistoric rock art in the world, recognised as a UNESCO Heritage Landscape.</p>
       </div>
       <div class="fact-card reveal">
-        <span class="fi">🫖</span>
+        <img class="fact-image" src="images/f8.png" alt="Tea Culture" loading="lazy">
         <h3>Tea Culture</h3>
         <p>Black tea served in the pear-shaped armudu glass is a symbol of hospitality, typically sipped with a cube of sugar or jam held in the mouth, infusing every sip with sweetness.</p>
       </div>
       <div class="fact-card reveal">
-        <span class="fi">🎻</span>
+        <img class="fact-image" src="images/f9.png" alt="Mugham Music" loading="lazy">
         <h3>Mugham Music</h3>
         <p>Azerbaijan's classical tradition, Mugham, is UNESCO Intangible Heritage, a deeply expressive improvisational form blending poetry, ancient Persian modes, and virtuoso performance on the tar and kamancha.</p>
       </div>
@@ -303,7 +313,7 @@
   <div class="section-inner">
     <span class="section-label" style="color:var(--gold);">In Motion</span>
     <h2 class="section-title reveal" style="color:var(--cream);">Azerbaijan <em>Alive</em></h2>
-    <p class="section-body reveal">Drop your GIF files into the <code style="color:var(--gold-lt);font-size:0.9em;">images/</code> folder and update the <code style="color:var(--gold-lt);font-size:0.9em;">src</code> paths below. Recommended: 3-5 second looping GIFs under 2MB each for fast loading on mobile.</p>
+    <p class="section-body reveal">Place your booth media inside the <code style="color:var(--gold-lt);font-size:0.9em;">images/</code> folder. The food cards below now use fixed image names, and the facts / destination sections use numbered files for easy replacement.</p>
 
     <div class="gif-grid">
       <div class="gif-slot reveal">
@@ -366,7 +376,7 @@
 
     <div class="desserts-grid">
       <div class="dessert-card reveal">
-        <div class="dessert-visual dv-pakhlava">🍯</div>
+        <div class="dessert-visual"><img class="dessert-image" src="images/paxlava.png" alt="Baki Paxlavasi" loading="lazy"></div>
         <div class="dessert-body">
           <div class="dessert-name">Baki Paxlavasi</div>
           <div class="dessert-alt">Baku Pakhlava</div>
@@ -384,7 +394,7 @@
       </div>
 
       <div class="dessert-card reveal">
-        <div class="dessert-visual dv-shekerbura">🌙</div>
+        <div class="dessert-visual"><img class="dessert-image" src="images/seker.png" alt="Sekerbura" loading="lazy"></div>
         <div class="dessert-body">
           <div class="dessert-name">Sekerbura</div>
           <div class="dessert-alt">Shekerbura</div>
@@ -401,7 +411,7 @@
       </div>
 
       <div class="dessert-card reveal">
-        <div class="dessert-visual dv-qoqal">🥐</div>
+        <div class="dessert-visual"><img class="dessert-image" src="images/qoqal.png" alt="Qoqal" loading="lazy"></div>
         <div class="dessert-body">
           <div class="dessert-name">Qoqal (Sor)</div>
           <div class="dessert-alt">Savoury Spiral Pastry</div>
@@ -418,7 +428,7 @@
       </div>
 
       <div class="dessert-card reveal">
-        <div class="dessert-visual dv-murebbe">🍓</div>
+        <div class="dessert-visual"><img class="dessert-image" src="images/jam.png" alt="Murebbe" loading="lazy"></div>
         <div class="dessert-body">
           <div class="dessert-name">Murebbe (Ciyelek)</div>
           <div class="dessert-alt">Strawberry Preserve</div>
@@ -434,7 +444,7 @@
       </div>
 
       <div class="dessert-card reveal">
-        <div class="dessert-visual dv-qutab">🫓</div>
+        <div class="dessert-visual"><img class="dessert-image" src="images/qutab.png" alt="Qutab" loading="lazy"></div>
         <div class="dessert-body">
           <div class="dessert-name">Qutab</div>
           <div class="dessert-alt">Goy Qutabi (Herb) &bull; Et Qutabi (Meat)</div>
@@ -470,28 +480,28 @@
     <p class="section-body reveal">From flame-lit mountaintops to Silk Road citadels, Azerbaijan rewards the curious traveller at every turn.</p>
     <div class="places-grid">
       <div class="place-card reveal">
-        <div class="place-thumb pt-baku">🏙️</div>
+        <div class="place-thumb"><img class="place-image" src="images/d1.png" alt="Baku" loading="lazy"></div>
         <div class="place-info">
           <h3>Baku</h3>
           <p>A dazzling capital where medieval walls meet the Flame Towers. Explore the UNESCO Old City, vibrant Nizami Street, and the Carpet Museum shaped like a rolled carpet.</p>
         </div>
       </div>
       <div class="place-card reveal">
-        <div class="place-thumb pt-gobus">🪨</div>
+        <div class="place-thumb"><img class="place-image" src="images/d2.png" alt="Gobustan" loading="lazy"></div>
         <div class="place-info">
           <h3>Gobustan</h3>
           <p>A moonscape of ancient rock art and bubbling mud volcanoes. Over 6,000 petroglyphs record 40,000 years of human presence.</p>
         </div>
       </div>
       <div class="place-card reveal">
-        <div class="place-thumb pt-shaki">🏰</div>
+        <div class="place-thumb"><img class="place-image" src="images/d3.png" alt="Shaki" loading="lazy"></div>
         <div class="place-info">
           <h3>Shaki</h3>
           <p>A Silk Road gem in the Caucasus foothills, home to the breathtaking Khan's Palace with stained-glass shebeke mosaics made without a single nail or glue.</p>
         </div>
       </div>
       <div class="place-card reveal">
-        <div class="place-thumb pt-ydag">🔥</div>
+        <div class="place-thumb"><img class="place-image" src="images/d4.png" alt="Yanar Dag" loading="lazy"></div>
         <div class="place-info">
           <h3>Yanar Dag</h3>
           <p>The "Burning Mountain," a hillside that has been naturally ablaze for centuries. Ancient fire-worshippers once traveled here to witness this geological miracle.</p>
@@ -526,7 +536,6 @@
     <nav class="footer-links">
       <a href="about.html">About</a>
       <a href="events.html">Events</a>
-      <a href="team.html">Team</a>
       <a href="join.html">Join</a>
     </nav>
   </div>

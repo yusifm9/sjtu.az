@@ -528,3 +528,26 @@ hr.divider {
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { text-align: center; }
 }
+
+
+/* ── ACCESSIBILITY / RESPONSIVE POLISH ───────────────────── */
+img { max-width: 100%; }
+.hero-card, .surface, .card, .event-article, .person-card, .place-card, .dessert-card, .fact-card {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1024px) {
+  .hero-inner { gap: 2rem; }
+}
+@media (max-width: 700px) {
+  .header-inner { gap: 12px; }
+  .header-logo { font-size: 1rem; }
+  .logo-text-main { white-space: nowrap; }
+  .hero-subtitle { font-size: 1.08rem; }
+  .hero-meta { gap: 12px; }
+  .hero-meta-item { min-width: calc(50% - 12px); }
+  .btn { width: 100%; text-align: center; }
+  .hero-actions .btn, .join-btns .btn { width: 100%; }
+}
+@media (min-width: 701px) {
+  .hero-actions .btn, .join-btns .btn { width: auto; }
+}
