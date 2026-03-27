@@ -7,7 +7,6 @@ const I18N = {
     nav_about: 'About',
     nav_events: 'Events',
     nav_join: 'Join',
-    nav_team: 'Team',
     nav_booth: 'Booth',
     lang_en: 'EN',
     lang_zh: '中文'
@@ -17,7 +16,6 @@ const I18N = {
     nav_about: '关于我们',
     nav_events: '活动',
     nav_join: '加入我们',
-    nav_team: '团队',
     nav_booth: '展位',
     lang_en: 'EN',
     lang_zh: '中文'
