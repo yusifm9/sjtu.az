@@ -86,21 +86,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const page = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.header-nav a, .mobile-nav a').forEach(a => {
     const href = a.getAttribute('href');
-    // Remove any previously set active state
-    a.classList.remove('active');
-    // Only add active class when this link matches current page
-    if (href === page || (page === '' && href === 'index.html')) {
-      a.classList.add('active');
-      // If this is the booth link on a non-booth page, remove its inline gold style
-    }
-    // For booth link: only show gold colour when actually on booth page
+    const isActive = href === page || (page === '' && href === 'index.html');
+    a.classList.toggle('active', isActive);
+    // Booth link: apply gold highlight only when ON booth page
     if (href === 'booth.html') {
       if (page === 'booth.html') {
         a.style.color = 'var(--gold-lt)';
         a.style.borderBottom = '2px solid var(--gold)';
       } else {
-        a.style.color = '';
-        a.style.borderBottom = '';
+        a.style.removeProperty('color');
+        a.style.removeProperty('border-bottom');
       }
     }
   });
