@@ -3,71 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-en="Team &bull; Azerbaijani Students Association at SJTU" data-zh="团队 &bull; 上海交通大学阿塞拜疆学生协会">Team &bull; Azerbaijani Students Association at SJTU</title>
-  <meta name="description" content="Meet the members of the Azerbaijani Students Association at Shanghai Jiao Tong University." data-target-attr="content" data-en-attr="Meet the members of the Azerbaijani Students Association at Shanghai Jiao Tong University." data-zh-attr="认识上海交通大学阿塞拜疆学生协会的成员。">
+  <title>Team &bull; Azerbaijani Students Association at SJTU</title>
+  <meta name="description" content="Meet the team behind the Azerbaijani Students Association at Shanghai Jiao Tong University.">
   <link rel="icon" type="image/png" href="images/logo-mark.png">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .people-grid {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .person-card {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: stretch;
-    }
-
-    .person-photo {
-      width: 100%;
-      height: 360px;
-      overflow: hidden;
-      background: linear-gradient(135deg, #1A120A 0%, #3D2B1A 100%);
-    }
-
-    .person-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .person-photo-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: rgba(255,255,255,0.8);
-    }
-
-    .person-body {
-      text-align: center;
-      padding: 1.1rem 1rem 1.25rem;
-    }
-
-    .person-name {
-      margin-bottom: 0.35rem;
-    }
-
-    .person-role {
-      font-size: 1rem;
-      color: var(--ink-soft);
-    }
-
-    @media (max-width: 768px) {
-      .person-photo {
-        height: 320px;
-      }
-
-      .people-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -83,7 +22,6 @@
       <a href="events.html" data-i18n="nav_events">Events</a>
       <a href="join.html" data-i18n="nav_join">Join</a>
       <a href="booth.html" data-i18n="nav_booth">Booth</a>
-      <a href="team.html" class="active"><span data-en="Team" data-zh="团队">Team</span></a>
     </nav>
     <div class="lang-switch" aria-label="Language switch">
       <button class="lang-btn" type="button" data-lang="en">EN</button>
@@ -104,96 +42,117 @@
   <a href="events.html" data-i18n="nav_events">Events</a>
   <a href="join.html" data-i18n="nav_join">Join</a>
   <a href="booth.html" data-i18n="nav_booth">Booth</a>
-  <a href="team.html" class="active"><span data-en="Team" data-zh="团队">Team</span></a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="triband"></div>
   <svg class="hero-flames" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
       <radialGradient id="rg4" cx="50%" cy="90%" r="50%">
-        <stop offset="0%" stop-color="#0092BC" stop-opacity="0.40"/>
+        <stop offset="0%" stop-color="#0092BC" stop-opacity="0.4"/>
         <stop offset="100%" stop-color="transparent"/>
       </radialGradient>
     </defs>
     <ellipse cx="720" cy="700" rx="900" ry="500" fill="url(#rg4)"/>
-    <path d="M160,500 Q240,390 320,460 Q400,530 480,410 Q560,290 640,420 Q720,550 800,430 Q880,310 960,420 Q1040,530 1120,440 Q1200,350 1280,500" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.28"/>
   </svg>
-
   <div class="hero-inner" style="grid-template-columns:1fr;">
-    <div style="max-width:700px;">
-      <div class="hero-tag anim-1"><span data-en="Azerbaijani Students Association" data-zh="阿塞拜疆学生协会">Azerbaijani Students Association</span></div>
-      <h1 class="hero-title anim-2"><span data-en="Meet Our <em>Members</em>" data-zh="认识我们的<em>成员</em>">Meet Our <em>Members</em></span></h1>
-      <p class="hero-subtitle anim-3"><span data-en="A clean and simple overview of the students representing and supporting the Azerbaijani Students Association at SJTU." data-zh="这里简要介绍在上海交通大学代表并支持阿塞拜疆学生协会的同学们。">A clean and simple overview of the students representing and supporting the Azerbaijani Students Association at SJTU.</span></p>
+    <div style="max-width:620px;">
+      <div class="hero-tag anim-1"><span data-en="The People" data-zh="团队成员">The People</span></div>
+      <h1 class="hero-title anim-2"><span data-en="Our <em>Team</em>" data-zh="我们的<em>团队</em>">Our <em>Team</em></span></h1>
+      <p class="hero-subtitle anim-3"><span data-en="The students leading and representing the Azerbaijani community at SJTU." data-zh="在上海交大带领并代表阿塞拜疆学生社群的同学们。">The students leading and representing the Azerbaijani community at SJTU.</span></p>
     </div>
   </div>
 </section>
 
+<!-- LEADERSHIP -->
 <section class="section alt">
   <div class="section-inner">
-    <span class="section-label"><span data-en="Members" data-zh="成员">Members</span></span>
-    <h2 class="section-title reveal"><span data-en="Association <em>Members</em>" data-zh="协会<em>成员</em>">Association <em>Members</em></span></h2>
-    <p class="section-body reveal"><span data-en="All students are shown in one consistent format: photo, full name, and member role in the Azerbaijani Students Association." data-zh="所有学生都以统一简洁的形式展示：照片、姓名以及在阿塞拜疆学生协会中的成员身份。">All students are shown in one consistent format: photo, full name, and member role in the Azerbaijani Students Association.</span></p>
+    <span class="team-section-label"><span data-en="Leadership" data-zh="领导层">Leadership</span></span>
+    <h2 class="section-title reveal"><span data-en="Co-Founders &amp; <em>Representatives</em>" data-zh="联合创始人与<em>代表</em>">Co-Founders &amp; <em>Representatives</em></span></h2>
+    <div class="team-grid">
 
-    <div class="people-grid">
-      <article class="person-card reveal">
-        <div class="person-photo">
-          <img src="assets/team/yusif-mammadov.png" alt="Yusif Mammadov" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'person-photo-placeholder\'>👤</div>'">
+      <article class="team-card reveal">
+        <div class="team-card-photo">
+          <img src="images/team/yusif-mammadov.jpg" alt="Yusif Mammadov" loading="lazy"
+               onerror="this.parentNode.innerHTML='<div class=\'photo-placeholder\'>👤</div>'">
         </div>
-        <div class="person-body">
-          <div class="person-name">Yusif Mammadov</div>
-          <div class="person-role"><span data-en="Member" data-zh="成员">Member</span></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Yusif Mammadov</div>
+          <div class="team-card-position"><span data-en="Co-founder &amp; ISC Representative" data-zh="联合创始人 &amp; ISC 代表">Co-founder &amp; ISC Representative</span></div>
+          <div class="team-card-dept"><span data-en="Electrical &amp; Computer Engineering" data-zh="电气与计算机工程">Electrical &amp; Computer Engineering</span></div>
         </div>
       </article>
 
-      <article class="person-card reveal">
-        <div class="person-photo">
-          <img src="assets/team/elvin-safarli.png" alt="Elvin Safarli" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'person-photo-placeholder\'>👤</div>'">
+      <article class="team-card reveal">
+        <div class="team-card-photo">
+          <img src="images/team/elvin-safarli.jpg" alt="Elvin Safarli" loading="lazy"
+               onerror="this.parentNode.innerHTML='<div class=\'photo-placeholder\'>👤</div>'">
         </div>
-        <div class="person-body">
-          <div class="person-name">Elvin Safarli</div>
-          <div class="person-role"><span data-en="Member" data-zh="成员">Member</span></div>
-        </div>
-      </article>
-
-      <article class="person-card reveal">
-        <div class="person-photo">
-          <img src="assets/team/amina-shabanova.png" alt="Amina Shabanova" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'person-photo-placeholder\'>👤</div>'">
-        </div>
-        <div class="person-body">
-          <div class="person-name">Amina Shabanova</div>
-          <div class="person-role"><span data-en="Member" data-zh="成员">Member</span></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Elvin Safarli</div>
+          <div class="team-card-position"><span data-en="Co-founder &amp; Campus Representative" data-zh="联合创始人 &amp; 校区代表">Co-founder &amp; Campus Representative</span></div>
+          <div class="team-card-dept"><span data-en="Mechanical Engineering" data-zh="机械工程">Mechanical Engineering</span></div>
         </div>
       </article>
 
-      <article class="person-card reveal">
-        <div class="person-photo">
-          <img src="assets/team/aghamatlab-aghazade.png" alt="Aghamatlab Aghazade" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'person-photo-placeholder\'>👤</div>'">
-        </div>
-        <div class="person-body">
-          <div class="person-name">Aghamatlab Aghazade</div>
-          <div class="person-role"><span data-en="Member" data-zh="成员">Member</span></div>
-        </div>
-      </article>
-
-      <article class="person-card reveal">
-        <div class="person-photo">
-          <img src="assets/team/turan-shahmaliyev.png" alt="Turan Shahmaliyev" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'person-photo-placeholder\'>👤</div>'">
-        </div>
-        <div class="person-body">
-          <div class="person-name">Turan Shahmaliyev</div>
-          <div class="person-role"><span data-en="Member" data-zh="成员">Member</span></div>
-        </div>
-      </article>
     </div>
   </div>
 </section>
 
+<!-- MEMBERS -->
+<section class="section">
+  <div class="section-inner">
+    <span class="team-section-label"><span data-en="Members" data-zh="成员">Members</span></span>
+    <h2 class="section-title reveal"><span data-en="Our <em>Community</em>" data-zh="我们的<em>社群</em>">Our <em>Community</em></span></h2>
+    <div class="team-grid">
+
+      <article class="team-card reveal">
+        <div class="team-card-photo">
+          <img src="images/team/member-01.jpg" alt="Amina Shabanova" loading="lazy"
+               onerror="this.parentNode.innerHTML='<div class=\'photo-placeholder\'>👤</div>'">
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-name">Amina Shabanova</div>
+          <div class="team-card-position"><span data-en="Member" data-zh="成员">Member</span></div>
+          <div class="team-card-dept"><span data-en="Azerbaijani Students Association" data-zh="阿塞拜疆学生协会">Azerbaijani Students Association</span></div>
+        </div>
+      </article>
+
+      <article class="team-card reveal">
+        <div class="team-card-photo">
+          <img src="images/team/member-02.jpg" alt="Aghamatlab Aghazade" loading="lazy"
+               onerror="this.parentNode.innerHTML='<div class=\'photo-placeholder\'>👤</div>'">
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-name">Aghamatlab Aghazade</div>
+          <div class="team-card-position"><span data-en="Member" data-zh="成员">Member</span></div>
+          <div class="team-card-dept"><span data-en="Electrical &amp; Computer Engineering" data-zh="电气与计算机工程">Electrical &amp; Computer Engineering</span></div>
+        </div>
+      </article>
+
+      <article class="team-card reveal">
+        <div class="team-card-photo">
+          <img src="images/team/member-03.jpg" alt="Turan Shahmaliyev" loading="lazy"
+               onerror="this.parentNode.innerHTML='<div class=\'photo-placeholder\'>👤</div>'">
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-name">Turan Shahmaliyev</div>
+          <div class="team-card-position"><span data-en="Member" data-zh="成员">Member</span></div>
+          <div class="team-card-dept"><span data-en="Mechanical Engineering" data-zh="机械工程">Mechanical Engineering</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
 <div class="join-banner">
-  <h2><span data-en="Want to Become a Part of SJTU.AZ?" data-zh="想成为 SJTU.AZ 的一员吗？">Want to Become a Part of SJTU.AZ?</span></h2>
-  <p><span data-en="We welcome students who want to support the community, help at events, and represent Azerbaijani culture at SJTU." data-zh="欢迎希望支持社群、参与活动并在交大展示阿塞拜疆文化的同学加入我们。">We welcome students who want to support the community, help at events, and represent Azerbaijani culture at SJTU.</span></p>
+  <h2><span data-en="Want to Join the Team?" data-zh="想加入我们的团队吗？">Want to Join the Team?</span></h2>
+  <p><span data-en="We welcome volunteers for events, cultural activities, and student support." data-zh="我们欢迎活动组织、文化活动及学生支持方面的志愿者。">We welcome volunteers for events, cultural activities, and student support.</span></p>
   <div class="join-btns">
-    <a class="btn primary" href="join.html"><span data-en="Join the Association" data-zh="加入协会">Join the Association</span></a>
+    <a class="btn primary" href="join.html"><span data-en="Join &amp; Volunteer" data-zh="加入与志愿">Join &amp; Volunteer</span></a>
   </div>
 </div>
 
@@ -211,11 +170,11 @@
       <a href="events.html" data-i18n="nav_events">Events</a>
       <a href="join.html" data-i18n="nav_join">Join</a>
       <a href="booth.html" data-i18n="nav_booth">Booth</a>
-      <a href="team.html"><span data-en="Team" data-zh="团队">Team</span></a>
     </nav>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<div class="dev-credit">developed by Yusif M.</div>
 </body>
 </html>
