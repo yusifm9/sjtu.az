@@ -7,6 +7,70 @@
   <meta name="description" content="Azerbaijani Students Association at Shanghai Jiao Tong University — community, culture, and support in Shanghai." data-target-attr="content" data-en-attr="Azerbaijani Students Association at Shanghai Jiao Tong University — community, culture, and support in Shanghai." data-zh-attr="上海交通大学阿塞拜疆学生协会：连接社群、分享文化，并为在上海的同学提供支持。">
   <link rel="icon" type="image/png" href="images/logo-mark.png.png">
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── Index event photo strip ── */
+    .event-photo-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+      margin: 1.4rem 0 0.5rem;
+    }
+    .event-photo-strip a {
+      display: block;
+      overflow: hidden;
+      border-radius: 8px;
+      aspect-ratio: 4/3;
+      background: rgba(255,255,255,0.04);
+    }
+    .event-photo-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease, filter 0.4s ease;
+      filter: brightness(0.9);
+    }
+    .event-photo-strip a:hover img {
+      transform: scale(1.05);
+      filter: brightness(1);
+    }
+    .event-photo-more {
+      display: block;
+      font-size: 0.8rem;
+      opacity: 0.55;
+      margin-top: 0.5rem;
+      text-align: right;
+    }
+    .event-photo-more a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Mini stats strip ── */
+    .event-stats-mini {
+      display: flex;
+      gap: 1.6rem;
+      flex-wrap: wrap;
+      margin: 1rem 0 0.2rem;
+    }
+    .event-stats-mini .stat {
+      display: flex;
+      flex-direction: column;
+    }
+    .event-stats-mini .stat .num {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .event-stats-mini .stat .lbl {
+      font-size: 0.7rem;
+      opacity: 0.5;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.2rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,7 +81,7 @@
       <img class="logo-flag" src="images/asalogo.png" alt="Azerbaijan flag">
       <span class="logo-text-main">SJTU.AZ</span>
     </a>
-        <nav class="header-nav" aria-label="Main navigation">
+    <nav class="header-nav" aria-label="Main navigation">
       <a href="index.html" data-i18n="navhome">Home</a>
       <a href="about.html" data-i18n="navabout">About</a>
       <a href="team.html" data-i18n="navteam">Team</a>
@@ -34,13 +98,13 @@
     </button>
   </div>
 </header>
-<nav class="mobile-nav" aria-label="Mobile navigation">
 
+<nav class="mobile-nav" aria-label="Mobile navigation">
   <div class="lang-switch mobile-lang-switch" aria-label="Language switch">
     <button class="lang-btn" type="button" data-lang="en">EN</button>
     <button class="lang-btn" type="button" data-lang="zh">中文</button>
   </div>
-    <a href="index.html" data-i18n="navhome">Home</a>
+  <a href="index.html" data-i18n="navhome">Home</a>
   <a href="about.html" data-i18n="navabout">About</a>
   <a href="team.html" data-i18n="navteam">Team</a>
   <a href="events.html" data-i18n="navevents">Events</a>
@@ -89,13 +153,15 @@
         </div>
       </div>
     </div>
+
+    <!-- Hero card — updated to latest completed event -->
     <aside class="hero-card anim-3" aria-label="Featured event">
-      <h3><span data-en="Featured Event" data-zh="精选活动">Featured Event</span></h3>
-      <h4>SJTU Cultural Festival</h4>
-      <p><span data-en="Representing Azerbaijan at the biggest university event of the year, held as part of the 130th anniversary celebrations." data-zh="在学校130周年庆系列活动中，于年度最大校园活动上代表阿塞拜疆亮相。">Representing Azerbaijan at the biggest university event of the year, held as part of the 130th anniversary celebrations.</span></p>
-      <p class="meta">April 6th, 2025. &bull; SJTUer International Fair, Minhang Campus, SJTU, Shanghai.</p>
+      <h3><span data-en="Latest Event" data-zh="最新活动">Latest Event</span></h3>
+      <h4>🎓 SJTU 130th Anniversary</h4>
+      <p><span data-en="We proudly represented Azerbaijan at SJTU's largest annual celebration — welcoming 1,000+ guests with traditional food, culture, and gifted books on the Azerbaijani language." data-zh="我们在交大规模最大的年度校庆上自豪地代表阿塞拜疆亮相，以传统美食、文化展示和语言书籍礼品迎接千余位来宾。">We proudly represented Azerbaijan at SJTU's largest annual celebration — welcoming 1,000+ guests with traditional food, culture, and gifted books on the Azerbaijani language.</span></p>
+      <p class="meta">April 6, 2025 &bull; SJTUer International Fair, Minhang Campus</p>
       <div style="margin-top:1.2rem;">
-        <a class="btn primary" href="booth.html" style="font-size:0.9rem;padding:8px 20px;"><span data-en="View Our Booth" data-zh="查看我们的展位">View Our Booth</span></a>
+        <a class="btn primary" href="events.html" style="font-size:0.9rem;padding:8px 20px;"><span data-en="See the Full Recap" data-zh="查看完整回顾">See the Full Recap</span></a>
       </div>
     </aside>
   </div>
@@ -117,25 +183,56 @@
   <div class="section-inner">
     <div class="section-head">
       <div>
-        <span class="section-label"><span data-en="Latest &amp; Upcoming" data-zh="最新与即将举行">Latest &amp; Upcoming</span></span>
+        <span class="section-label"><span data-en="Latest Event" data-zh="最新活动">Latest Event</span></span>
         <h2 class="section-title" style="margin-bottom:0;">Our <em data-i18n="nav_events">Events</em></h2>
       </div>
       <a class="link" href="events.html"><span data-en="All events &rarr;" data-zh="查看全部活动 &rarr;">All events &rarr;</span></a>
     </div>
 
-    <article class="event-article reveal">
+    <!-- Featured: SJTU 130th Anniversary -->
+    <article class="event-article reveal" style="border-top:3px solid var(--az-blue, #0092BC);">
       <div class="event-top">
-        <span class="event-tag featured"><span class="dot"></span><span data-en="Upcoming" data-zh="即将举行">Upcoming</span></span>
-        <span class="event-meta">Early April (TBA)</span>
+        <span class="event-tag featured"><span class="dot"></span><span data-en="Featured" data-zh="精选">Featured</span></span>
+        <span class="event-meta">April 6, 2025</span>
       </div>
-      <h3>SJTU Cultural Festival</h3>
-      <p><span data-en="SJTU.AZ will represent Azerbaijan at the Cultural Festival of SJTU, one of the largest events in the university, held as part of the 130th anniversary celebrations. We will showcase culture, traditions, and community." data-zh="SJTU.AZ 将在上海交大文化节上代表阿塞拜疆亮相。该活动是学校规模最大的活动之一，也是130周年校庆系列的重要组成部分。我们将展示阿塞拜疆的文化、传统与社群精神。">SJTU.AZ will represent Azerbaijan at the Cultural Festival of SJTU, one of the largest events in the university, held as part of the 130th anniversary celebrations. We will showcase culture, traditions, and community.</span></p>
-      <div class="kv">
-        <div><span data-en="Date" data-zh="日期">Date</span></div><div><span data-en="To be announced (early April)" data-zh="待公布（四月上旬）">To be announced (early April)</span></div>
+      <h3><span data-en="SJTU 130th Anniversary — Representing Azerbaijan 🇦🇿" data-zh="交大130周年校庆 — 代表阿塞拜疆亮相 🇦🇿">SJTU 130th Anniversary — Representing Azerbaijan 🇦🇿</span></h3>
+      <p><span data-en="SJTU.AZ represented Azerbaijan at the university's largest annual event. Our booth welcomed over 1,000 guests with traditional pastries, homemade jams, authentic drinks, and gifted journals and books on the Azerbaijani language and culture." data-zh="SJTU.AZ 在学校年度最大活动中代表阿塞拜疆亮相。我们的展位以传统糕点、自制果酱、正宗饮品迎接逾千名来宾，并赠送了介绍阿塞拜疆语言与文化的笔记本和书籍。">SJTU.AZ represented Azerbaijan at the university's largest annual event. Our booth welcomed over 1,000 guests with traditional pastries, homemade jams, authentic drinks, and gifted journals and books on the Azerbaijani language and culture.</span></p>
+
+      <!-- Mini stats -->
+      <div class="event-stats-mini">
+        <div class="stat">
+          <span class="num">130</span>
+          <span class="lbl"><span data-en="Years of SJTU" data-zh="交大周年">Years of SJTU</span></span>
+        </div>
+        <div class="stat">
+          <span class="num">1,000+</span>
+          <span class="lbl"><span data-en="Guests welcomed" data-zh="接待来宾">Guests welcomed</span></span>
+        </div>
+        <div class="stat">
+          <span class="num">800+</span>
+          <span class="lbl"><span data-en="Books &amp; journals gifted" data-zh="赠送书籍与笔记本">Books &amp; journals gifted</span></span>
+        </div>
+      </div>
+
+      <!-- 2-photo preview strip -->
+      <div class="event-photo-strip">
+        <a href="images/event1/1.jpg" target="_blank" rel="noopener">
+          <img src="images/event1/1.jpg" alt="SJTU 130th Anniversary — Photo 1" loading="lazy">
+        </a>
+        <a href="images/event1/2.jpg" target="_blank" rel="noopener">
+          <img src="images/event1/2.jpg" alt="SJTU 130th Anniversary — Photo 2" loading="lazy">
+        </a>
+      </div>
+      <span class="event-photo-more"><a href="events.html"><span data-en="View all 6 photos on the Events page &rarr;" data-zh="在活动页面查看全部6张照片 &rarr;">View all 6 photos on the Events page &rarr;</span></a></span>
+
+      <div class="kv" style="margin-top:1.2rem;">
+        <div><span data-en="Date" data-zh="日期">Date</span></div><div>April 6, 2025</div>
         <div><span data-en="Location" data-zh="地点">Location</span></div><div>SJTU Minhang Campus</div>
+        <div><span data-en="Full Recap" data-zh="完整回顾">Full Recap</span></div><div><a class="link" href="events.html"><span data-en="Read more &rarr;" data-zh="阅读更多 &rarr;">Read more &rarr;</span></a></div>
       </div>
     </article>
 
+    <!-- Past: Community Meetup -->
     <article class="event-article reveal" style="margin-top:1.2rem;">
       <div class="event-top">
         <span class="event-tag"><span class="dot"></span><span data-en="Past" data-zh="往期">Past</span></span>
