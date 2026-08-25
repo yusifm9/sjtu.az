@@ -1,110 +1,193 @@
-
-/* SJTU.AZ — main.js */
-
 const I18N = {
   en: {
-    nav_home: 'Home',
-    nav_about: 'About',
-    nav_events: 'Events',
-    nav_join: 'Join',
-    nav_booth: 'Booth',
-    lang_en: 'EN',
-    lang_zh: '中文'
+    nav_home: "Home",
+    nav_about: "About",
+    nav_team: "Team",
+    nav_events: "Events",
+    nav_join: "Join",
+    nav_azerbaijan: "Azerbaijan"
   },
-  zh: {
-    nav_home: '首页',
-    nav_about: '关于我们',
-    nav_events: '活动',
-    nav_join: '加入我们',
-    nav_booth: '展位',
-    lang_en: 'EN',
-    lang_zh: '中文'
+  az: {
+    nav_home: "Ana səhifə",
+    nav_about: "Haqqımızda",
+    nav_team: "Komanda",
+    nav_events: "Tədbirlər",
+    nav_join: "Qoşul",
+    nav_azerbaijan: "Azərbaycan"
   }
 };
 
-function applyLanguage(lang) {
-  const dict = I18N[lang] || I18N.en;
-  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+const LANGS = ["en", "az"];
 
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (dict[key] !== undefined) el.innerHTML = dict[key];
+function getLanguage() {
+  try {
+    const saved = localStorage.getItem("sjtuaz-lang");
+    return LANGS.includes(saved) ? saved : "en";
+  } catch (error) {
+    return "en";
+  }
+}
+
+function setLanguage(lang) {
+  const active = LANGS.includes(lang) ? lang : "en";
+  const dict = I18N[active] || I18N.en;
+
+  document.documentElement.lang = active === "az" ? "az-Latn-AZ" : "en";
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (dict[key]) el.innerHTML = dict[key];
   });
 
-  document.querySelectorAll('[data-en][data-zh]').forEach(el => {
-    const value = el.getAttribute(lang === 'zh' ? 'data-zh' : 'data-en');
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${active}`) || el.getAttribute("data-en");
     if (value !== null) el.innerHTML = value;
   });
 
-  document.querySelectorAll('[data-en-attr][data-zh-attr]').forEach(el => {
-    const value = el.getAttribute(lang === 'zh' ? 'data-zh-attr' : 'data-en-attr');
-    const attr = el.getAttribute('data-target-attr') || 'content';
+  document.querySelectorAll("[data-en-attr]").forEach(el => {
+    const attr = el.getAttribute("data-target-attr") || "content";
+    const value = el.getAttribute(`data-${active}-attr`) || el.getAttribute("data-en-attr");
     if (value !== null) el.setAttribute(attr, value);
   });
 
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-    btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    const pressed = btn.dataset.lang === active;
+    btn.classList.toggle("active", pressed);
+    btn.setAttribute("aria-pressed", pressed ? "true" : "false");
   });
 
-  localStorage.setItem('sjtuaz-lang', lang);
+  try {
+    localStorage.setItem("sjtuaz-lang", active);
+  } catch (error) {
+    return;
+  }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const hamburger  = document.querySelector('.hamburger');
-  const mobileNav  = document.querySelector('.mobile-nav');
+function initNavigation() {
+  const hamburger = document.querySelector(".hamburger");
+  const mobileNav = document.querySelector(".mobile-nav");
 
   if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', function () {
-      const open = mobileNav.classList.toggle('open');
-      hamburger.classList.toggle('open', open);
-      hamburger.setAttribute('aria-expanded', open);
+    hamburger.addEventListener("click", () => {
+      const open = mobileNav.classList.toggle("open");
+      hamburger.classList.toggle("open", open);
+      hamburger.setAttribute("aria-expanded", open ? "true" : "false");
     });
-    mobileNav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('open');
+
+    mobileNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
       });
     });
   }
 
-  const revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && revealEls.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => io.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('visible'));
+  const page = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".header-nav a, .mobile-nav a, .footer-links a").forEach(link => {
+    const href = (link.getAttribute("href") || "").split("#")[0];
+    link.classList.toggle("active", href === page || (page === "" && href === "index.html"));
+  });
+}
+
+function initReveal() {
+  const revealEls = document.querySelectorAll(".reveal");
+  if (!revealEls.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    revealEls.forEach(el => el.classList.add("visible"));
+    return;
   }
 
-  const page = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.header-nav a, .mobile-nav a').forEach(a => {
-    const href = a.getAttribute('href');
-    const isActive = href === page || (page === '' && href === 'index.html');
-    a.classList.toggle('active', isActive);
-    // Booth link: apply gold highlight only when ON booth page
-    if (href === 'booth.html') {
-      if (page === 'booth.html') {
-        a.style.color = 'var(--gold-lt)';
-        a.style.borderBottom = '2px solid var(--gold)';
-      } else {
-        a.style.removeProperty('color');
-        a.style.removeProperty('border-bottom');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
       }
+    });
+  }, { threshold: .12, rootMargin: "0px 0px -30px 0px" });
+
+  revealEls.forEach(el => observer.observe(el));
+}
+
+function initGalleryMarquees() {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  document.querySelectorAll("[data-gallery-marquee]").forEach(marquee => {
+    if (marquee.dataset.galleryReady === "true") return;
+    marquee.dataset.galleryReady = "true";
+
+    const viewport = marquee.querySelector("[data-gallery-viewport]");
+    const track = marquee.querySelector("[data-gallery-track]");
+    const prev = marquee.querySelector("[data-gallery-prev]");
+    const next = marquee.querySelector("[data-gallery-next]");
+    if (!viewport || !track || !track.children.length) return;
+
+    Array.from(track.children).forEach(slide => {
+      const clone = slide.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      track.appendChild(clone);
+    });
+
+    let singleWidth = 0;
+    let pauseUntil = 0;
+    let direction = -1;
+    const speed = Number(marquee.dataset.gallerySpeed || .85);
+
+    const measure = () => {
+      singleWidth = track.scrollWidth / 2;
+      if (singleWidth > 0 && viewport.scrollLeft === 0) viewport.scrollLeft = singleWidth;
+    };
+
+    const wrap = () => {
+      if (!singleWidth) return;
+      if (viewport.scrollLeft <= 0) viewport.scrollLeft += singleWidth;
+      if (viewport.scrollLeft >= singleWidth) viewport.scrollLeft -= singleWidth;
+    };
+
+    const nudge = sign => {
+      measure();
+      const distance = Math.min(420, Math.max(240, viewport.clientWidth * .48));
+      if (sign < 0 && viewport.scrollLeft < distance) viewport.scrollLeft += singleWidth;
+      if (sign > 0 && viewport.scrollLeft > singleWidth - distance) viewport.scrollLeft -= singleWidth;
+      direction = sign;
+      pauseUntil = performance.now() + 900;
+      viewport.scrollBy({ left: sign * distance, behavior: "smooth" });
+      window.setTimeout(() => {
+        wrap();
+        direction = -1;
+      }, 950);
+    };
+
+    prev?.addEventListener("click", () => nudge(-1));
+    next?.addEventListener("click", () => nudge(1));
+    viewport.addEventListener("mouseenter", () => { pauseUntil = performance.now() + 700; });
+    viewport.addEventListener("focusin", () => { pauseUntil = performance.now() + 700; });
+    window.addEventListener("resize", measure, { passive: true });
+
+    measure();
+    if (!reduceMotion) {
+      const animate = time => {
+        if (time > pauseUntil) {
+          viewport.scrollLeft += direction * speed;
+          wrap();
+        }
+        requestAnimationFrame(animate);
+      };
+      requestAnimationFrame(animate);
     }
   });
+}
 
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang || 'en'));
+document.addEventListener("DOMContentLoaded", () => {
+  initNavigation();
+  initReveal();
+  initGalleryMarquees();
+
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang || "en"));
   });
 
-  const saved = localStorage.getItem('sjtuaz-lang');
-  const startLang = saved === 'zh' ? 'zh' : 'en';
-  applyLanguage(startLang);
+  setLanguage(getLanguage());
 });

@@ -3,404 +3,258 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-en="Team &bull; Azerbaijani Students Association at SJTU" data-zh="团队 &bull; SJTU.AZ">Team &bull; Azerbaijani Students Association at SJTU</title>
-  <meta name="description" content="Meet the members of the Azerbaijani Students Association at Shanghai Jiao Tong University."
-        data-target-attr="content"
-        data-en-attr="Meet the members of the Azerbaijani Students Association at Shanghai Jiao Tong University."
-        data-zh-attr="上海交通大学阿塞拜疆学生协会成员介绍。">
-  <link rel="icon" type="image/png" href="images/logo-mark.png">
+  <title>Team | SJTU.AZ</title>
+  <meta name="description" content="Meet the student team behind SJTU.AZ." data-target-attr="content" data-en-attr="Meet the student team behind SJTU.AZ." data-az-attr="SJTU.AZ-in arxasındakı tələbə komandası ilə tanış olun.">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/favicon-180.png">
   <link rel="stylesheet" href="css/style.css">
 
+  <!-- Photo-based people grid. Self-contained so css/style.css stays untouched. -->
   <style>
-    /* ── TEAM PAGE ─────────────────────────────────────────── */
-
-    /* Single unified grid — founders and members together */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.8rem;
-      margin-top: 2rem;
+    .people-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+      gap:28px 24px;
     }
-
-    /* ── BASE CARD ─────────────────────────────────────────── */
-    .team-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: transform .22s ease, box-shadow .22s ease;
-      display: flex;
-      flex-direction: column;
+    .person-card{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      text-align:left;
     }
-    .team-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 48px rgba(26,18,10,0.12);
+    .person-photo{
+      position:relative;
+      aspect-ratio:4/5;
+      border-radius:14px;
+      overflow:hidden;
+      background:rgba(128,128,128,.14);
+      border:1px solid rgba(128,128,128,.22);
+      display:grid;
+      place-items:center;
     }
-
-    /* ── PHOTO — portrait rectangle (3:4)
-       object-fit:cover + object-position:top handles any image
-       shape without distortion or manual pre-cropping.        */
-    .team-card-photo {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      overflow: hidden;
-      background: linear-gradient(145deg,
-        rgba(201,168,76,0.10) 0%,
-        rgba(0,146,188,0.08) 100%
-      );
-      flex-shrink: 0;
+    .person-photo img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .45s ease;
     }
-    .team-card-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      transition: transform .4s ease;
+    .person-card:hover .person-photo img{ transform:scale(1.04); }
+    /* Shown only while / if the photo is missing */
+    .person-fallback{
+      font-size:1.6rem;
+      font-weight:700;
+      letter-spacing:.06em;
+      opacity:.45;
     }
-    .team-card:hover .team-card-photo img {
-      transform: scale(1.04);
+    .person-name{
+      font-weight:600;
+      line-height:1.3;
     }
-
-    /* Fallback when image is missing */
-    .team-card-photo .photo-fallback {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(145deg,
-        rgba(201,168,76,0.08),
-        rgba(0,146,188,0.06)
-      );
+    .person-role{
+      font-size:.86rem;
+      opacity:.65;
+      margin-top:2px;
     }
-    .photo-fallback .pf-initials {
-      font-size: 3rem;
-      font-weight: 700;
-      font-family: 'Playfair Display', serif;
-      color: rgba(0,0,0,0.12);
-      letter-spacing: -0.02em;
+    @media (max-width:480px){
+      .people-grid{ grid-template-columns:repeat(2,1fr); gap:22px 16px; }
     }
-
-    /* Accent stripe — gold for members, red→gold for founders */
-    .team-card::before {
-      content: '';
-      display: block;
-      height: 3px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-    .team-card.founder::before {
-      background: linear-gradient(90deg, var(--az-red), var(--gold));
-      height: 4px;
-    }
-
-    /* Role badge overlaid on photo */
-    .role-badge {
-      position: absolute;
-      bottom: 0.7rem;
-      left: 0.7rem;
-      background: rgba(26,18,10,0.72);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      color: var(--gold-lt);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 2px;
-      border: 1px solid rgba(201,168,76,0.3);
-    }
-
-    /* ── CARD BODY ─────────────────────────────────────────── */
-    .team-card-body {
-      padding: 1.2rem 1.3rem 1.5rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-    .team-card-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.25;
-    }
-    .team-card-position {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--az-red);
-      margin-top: 0.15rem;
-    }
-    .team-card.founder .team-card-position {
-      color: var(--gold);
-    }
-
-    /* ── SECTION LABEL ─────────────────────────────────────── */
-    .team-section-label {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.6rem;
-    }
-
-    /* ── RESPONSIVE ─────────────────────────────────────────── */
-    @media (max-width: 600px) {
-      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-      .team-card-body { padding: 0.9rem 1rem 1.2rem; }
-      .team-card-name { font-size: 0.92rem; }
-    }
-    @media (max-width: 360px) {
-      .team-grid { grid-template-columns: 1fr; }
+    @media (prefers-reduced-motion:reduce){
+      .person-photo img{ transition:none; }
+      .person-card:hover .person-photo img{ transform:none; }
     }
   </style>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="header-inner">
-    <a class="header-logo" href="index.html" aria-label="SJTU.AZ Home">
-      <img class="logo-flag" src="images/asalogo.png" alt="SJTU.AZ Logo">
-      <span class="logo-text-main">SJTU.AZ</span>
-    </a>
-    <nav class="header-nav" aria-label="Main navigation">
-      <a href="index.html" data-i18n="navhome">Home</a>
-      <a href="about.html" data-i18n="navabout">About</a>
-      <a href="team.html" data-i18n="navteam">Team</a>
-      <a href="events.html" data-i18n="navevents">Events</a>
-      <a href="join.html" data-i18n="navjoin">Join</a>
-      <a href="booth.html" data-i18n="navbooth">Booth</a>
-    </nav>
-    <div class="lang-switch" aria-label="Language switch">
-      <button class="lang-btn" type="button" data-lang="en">EN</button>
-      <button class="lang-btn" type="button" data-lang="zh">中文</button>
-    </div>
-    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<nav class="mobile-nav">
-  <div class="lang-switch mobile-lang-switch" aria-label="Language switch">
-    <button class="lang-btn" type="button" data-lang="en">EN</button>
-    <button class="lang-btn" type="button" data-lang="zh">中文</button>
-  </div>
-  <a href="index.html" data-i18n="navhome">Home</a>
-  <a href="about.html" data-i18n="navabout">About</a>
-  <a href="team.html" data-i18n="navteam">Team</a>
-  <a href="events.html" data-i18n="navevents">Events</a>
-  <a href="join.html" data-i18n="navjoin">Join</a>
-  <a href="booth.html" data-i18n="navbooth">Booth</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="triband"></div>
-  <svg class="hero-flames" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice"
-       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <radialGradient id="rg-team" cx="50%" cy="80%" r="60%">
-        <stop offset="0%" stop-color="#0092BC" stop-opacity="0.4"/>
-        <stop offset="100%" stop-color="transparent"/>
-      </radialGradient>
-    </defs>
-    <ellipse cx="720" cy="700" rx="900" ry="500" fill="url(#rg-team)"/>
-    <path d="M300,500 Q360,340 420,440 Q480,540 540,380 Q600,220 660,400 Q720,580 780,400 Q840,220 900,380 Q960,540 1020,420 Q1080,300 1140,500"
-          fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.2"/>
-  </svg>
-  <div class="hero-inner" style="grid-template-columns:1fr;">
-    <div style="max-width:620px;">
-      <div class="hero-tag anim-1"><span data-en="Our People" data-zh="我们的成员">Our People</span></div>
-      <h1 class="hero-title anim-2">
-        <span data-en="Meet the <em>Team</em>" data-zh="认识我们的<em>团队</em>">Meet the <em>Team</em></span>
-      </h1>
-      <p class="hero-subtitle anim-3">
-        <span data-en="The students behind the Azerbaijani Students Association at SJTU — building community, one connection at a time."
-              data-zh="这些是上海交通大学阿塞拜疆学生协会背后的同学们，他们一步一步地建立着我们的社群。">The students behind the Azerbaijani Students Association at SJTU — building community, one connection at a time.</span>
-      </p>
-      <div class="hero-actions anim-4">
-        <a class="btn primary" href="join.html"><span data-en="Join the Team" data-zh="加入团队">Join the Team</span></a>
-        <a class="btn ghost" href="about.html"><span data-en="Our Mission" data-zh="我们的使命">Our Mission</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ALL MEMBERS -->
-<section class="section alt">
-  <div class="section-inner">
-    <span class="team-section-label">
-      <span data-en="Azerbaijani Students Association &bull; SJTU" data-zh="阿塞拜疆学生协会 &bull; 上交大">Azerbaijani Students Association &bull; SJTU</span>
-    </span>
-    <h2 class="section-title reveal">
-      <span data-en="All <em>Members</em>" data-zh="全体<em>成员</em>">All <em>Members</em></span>
-    </h2>
-
-    <div class="team-grid">
-
-      <!-- Yusif Mammadov -->
-      <article class="team-card founder reveal">
-        <div class="team-card-photo">
-          <img src="images/team/yusif1.jpg" alt="Yusif Mammadov" loading="lazy"
-               onerror="this.style.display='none'; this.parentNode.querySelector('.photo-fallback').style.display='flex';">
-          <div class="photo-fallback" style="display:none;">
-            <div class="pf-initials">YM</div>
-          </div>
-          <div class="role-badge">
-            <span data-en="Founder" data-zh="联合创始人">Founder</span>
-          </div>
-        </div>
-        <div class="team-card-body">
-          <div class="team-card-name">Yusif Mammadov</div>
-          <div class="team-card-position">
-            <span data-en=" Chair &amp; Board Member of SJTU's International Students' Center" data-zh="联合创始人 &amp; ISC代表">Chair &amp; SJTU's Int. Students' Center Board Member</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Elvin Safarli -->
-      <article class="team-card founder reveal">
-        <div class="team-card-photo">
-          <img src="images/team/elvin-safarli.jpg" alt="Elvin Safarli" loading="lazy"
-               onerror="this.style.display='none'; this.parentNode.querySelector('.photo-fallback').style.display='flex';">
-          <div class="photo-fallback" style="display:none;">
-            <div class="pf-initials">ES</div>
-          </div>
-          <div class="role-badge">
-            <span data-en="Vice-Chair" data-zh="副主席">Vice-Chair</span>
-          </div>
-        </div>
-        <div class="team-card-body">
-          <div class="team-card-name">Elvin Safarli</div>
-          <div class="team-card-position">
-            <span data-en="Campus Representative" data-zh="校区代表">Campus Representative  </span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Amina Shabanova -->
-      <article class="team-card reveal">
-        <div class="team-card-photo">
-          <img src="images/team/amina-shabanova.jpg" alt="Amina Shabanova" loading="lazy"
-               onerror="this.style.display='none'; this.parentNode.querySelector('.photo-fallback').style.display='flex';">
-          <div class="photo-fallback" style="display:none;">
-            <div class="pf-initials">AS</div>
-          </div>
-        </div>
-        <div class="team-card-body">
-          <div class="team-card-name">Amina Shabanova</div>
-          <div class="team-card-position">
-            <span data-en="Member" data-zh="成员">Member</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Aghamatlab Aghazade -->
-      <article class="team-card reveal">
-        <div class="team-card-photo">
-          <img src="images/team/aghamatlab-aghazade.jpg" alt="Aghamatlab Akbarzade" loading="lazy"
-               onerror="this.style.display='none'; this.parentNode.querySelector('.photo-fallback').style.display='flex';">
-          <div class="photo-fallback" style="display:none;">
-            <div class="pf-initials">AA</div>
-          </div>
-        </div>
-        <div class="team-card-body">
-          <div class="team-card-name">Aghamatlab Akbarzade</div>
-          <div class="team-card-position">
-            <span data-en="Member" data-zh="成员">Member</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Laman Baghiyeva  -->
-      <article class="team-card reveal">
-        <div class="team-card-photo">
-          <img src="images/team/laman-baghiyeva.jpg" alt="Laman Baghiyeva" loading="lazy"
-               onerror="this.style.display='none'; this.parentNode.querySelector('.photo-fallback').style.display='flex';">
-          <div class="photo-fallback" style="display:none;">
-            <div class="pf-initials">LB</div>
-          </div>
-        </div>
-        <div class="team-card-body">
-          <div class="team-card-name">Laman Baghiyeva</div>
-          <div class="team-card-position">
-            <span data-en="Member" data-zh="成员">Member</span>
-          </div>
-        </div>
-      </article>
-
-
-            <!-- Turan Shahmaliyev  -->
-      <article class="team-card reveal">
-        <div class="team-card-photo">
-          <img src="images/team/turan-shahmaliyev.jpg" alt="Turan Shahmaliyev" loading="lazy"
-               onerror="this.style.display='none'; this.parentNode.querySelector('.photo-fallback').style.display='flex';">
-          <div class="photo-fallback" style="display:none;">
-            <div class="pf-initials">TS</div>
-          </div>
-        </div>
-        <div class="team-card-body">
-          <div class="team-card-name">Turan Shahmaliyev</div>
-          <div class="team-card-position">
-            <span data-en="Member" data-zh="成员">Member</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<div class="join-banner">
-  <h2>
-    <span data-en="Want to Be Part of the Team?" data-zh="想加入我们吗？">Want to Be Part of the Team?</span>
-  </h2>
-  <p>
-    <span data-en="We welcome volunteers for events, cultural activities, and student support."
-          data-zh="我们欢迎参与活动、文化项目和学生互助的志愿者。">We welcome volunteers for events, cultural activities, and student support.</span>
-  </p>
-  <div class="join-btns">
-    <a class="btn primary" href="join.html">
-      <span data-en="Join Us" data-zh="加入我们">Join Us</span>
-    </a>
-    <a class="btn ghost" href="about.html">
-      <span data-en="Learn More" data-zh="了解更多">Learn More</span>
-    </a>
-  </div>
-</div>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a class="footer-logo" href="index.html">
-        <img src="images/asalogo.png" alt="SJTU.AZ Logo"> SJTU.AZ
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="header-logo" href="index.html" aria-label="SJTU.AZ home">
+        <img class="logo-flag" src="assets/logo.png" alt="SJTU.AZ logo">
+        <span class="brand-copy">
+          <span class="logo-text-main">SJTU.AZ</span>
+          <span class="logo-text-sub" data-en="Azerbaijani Students Association" data-az="Azərbaycan Tələbə Assosiasiyası">Azerbaijani Students Association</span>
+        </span>
       </a>
-      <p>
-        <span data-en="Azerbaijani Students Association at Shanghai Jiao Tong University &bull; Shanghai, China"
-              data-zh="上海交通大学阿塞拜疆学生协会 &bull; 中国上海">Azerbaijani Students Association at Shanghai Jiao Tong University &bull; Shanghai, China</span>
-      </p>
-    </div>
-    <nav class="footer-links">
-      <a href="about.html" data-i18n="navabout">About</a>
-      <a href="team.html" data-i18n="navteam">Team</a>
-      <a href="events.html" data-i18n="navevents">Events</a>
-      <a href="join.html" data-i18n="navjoin">Join</a>
-      <a href="booth.html" data-i18n="navbooth">Booth</a>
-    </nav>
-  </div>
-</footer>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="team.html" data-i18n="nav_team">Team</a>
+        <a href="events.html" data-i18n="nav_events">Events</a>
+        <a href="join.html" data-i18n="nav_join">Join</a>
 
-<script src="js/main.js"></script>
-<div class="dev-credit">developed by Yusif M.</div>
+      </nav>
+      <div class="lang-switch" aria-label="Language switch">
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-lang="az">AZ</button>
+      </div>
+      <button class="hamburger" type="button" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <div class="mobile-nav-inner">
+      <div class="lang-switch mobile-lang-switch" aria-label="Mobile language switch">
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-lang="az">AZ</button>
+      </div>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="team.html" data-i18n="nav_team">Team</a>
+      <a href="events.html" data-i18n="nav_events">Events</a>
+      <a href="join.html" data-i18n="nav_join">Join</a>
+      <a href="booth.html" data-i18n="nav_azerbaijan">Azerbaijan</a>
+    </div>
+  </nav>
+
+  
+
+  <main>
+    <section class="hero hero-team compact-hero">
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <h1 class="hero-title" data-en="Our team" data-az="Komandamız">Our team</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <div>
+            <h2 class="section-title" data-en="Members" data-az="Üzvlər">Members</h2>
+          </div>
+        </div>
+        <div class="people-grid">
+
+          <article class="person-card reveal">
+            <div class="person-photo">
+              <span class="person-fallback" aria-hidden="true">YM</span>
+              <img src="images/team/yusif-mammadov.png" alt="Yusif Mammadov" loading="lazy" onerror="this.remove()">
+            </div>
+            <div>
+              <div class="person-name">Yusif Mammadov</div>
+              <div class="person-role" data-en="Founder & SJTU ISC Board Member" data-az="Təsisçi & SJTU ISC İdarə Heyətin Üzvü">Founder & SJTU ISC Board Member</div>
+            </div>
+          </article>
+
+          <article class="person-card reveal">
+            <div class="person-photo">
+              <span class="person-fallback" aria-hidden="true">ES</span>
+              <img src="images/team/elvin-safarli.jpg" alt="Elvin Safarli" loading="lazy" onerror="this.remove()">
+            </div>
+            <div>
+              <div class="person-name">Elvin Safarli</div>
+              <div class="person-role" data-en="Students Representative" data-az="Students Representative">Students Representative</div>
+            </div>
+          </article>
+
+          <article class="person-card reveal">
+            <div class="person-photo">
+              <span class="person-fallback" aria-hidden="true">AS</span>
+              <img src="images/team/amina-shabanova.jpg" alt="Amina Shabanova" loading="lazy" onerror="this.remove()">
+            </div>
+            <div>
+              <div class="person-name">Amina Shabanova</div>
+              <div class="person-role" data-en="Member" data-az="Üzv">Member</div>
+            </div>
+          </article>
+
+          <article class="person-card reveal">
+            <div class="person-photo">
+              <span class="person-fallback" aria-hidden="true">AA</span>
+              <img src="images/team/aghamatlab-aghazade.jpg" alt="Aghamatlab Akbarzade" loading="lazy" onerror="this.remove()">
+            </div>
+            <div>
+              <div class="person-name">Aghamatlab Akbarzade</div>
+              <div class="person-role" data-en="Member" data-az="Üzv">Member</div>
+            </div>
+          </article>
+
+          <article class="person-card reveal">
+            <div class="person-photo">
+              <span class="person-fallback" aria-hidden="true">LB</span>
+              <img src="images/team/laman-baghiyeva.jpg" alt="Laman Baghiyeva" loading="lazy" onerror="this.remove()">
+            </div>
+            <div>
+              <div class="person-name">Laman Baghiyeva</div>
+              <div class="person-role" data-en="Member" data-az="Üzv">Member</div>
+            </div>
+          </article>
+
+          <article class="person-card reveal">
+            <div class="person-photo">
+              <span class="person-fallback" aria-hidden="true">TS</span>
+              <img src="images/team/turan-shahmaliyev.jpg" alt="Turan Shahmaliyev" loading="lazy" onerror="this.remove()">
+            </div>
+            <div>
+              <div class="person-name">Turan Shahmaliyev</div>
+              <div class="person-role" data-en="Member" data-az="Üzv">Member</div>
+            </div>
+          </article>
+
+          <article class="person-card reveal">
+            <div class="person-photo">
+              <span class="person-fallback" aria-hidden="true">FG</span>
+              <img src="images/team/Fakhri-Gambarzada.jpg" alt="Fakhri Gambarzada" loading="lazy" onerror="this.remove()">
+            </div>
+            <div>
+              <div class="person-name">Fakhri Gambarzada</div>
+              <div class="person-role" data-en="Member" data-az="Üzv">Member</div>
+            </div>
+          </article>
+
+          <article class="person-card reveal">
+            <div class="person-photo">
+              <span class="person-fallback" aria-hidden="true">FH</span>
+              <img src="images/team/fuad-hasanzadeh.jpeg" alt="Fuad Hasanzade" loading="lazy" onerror="this.remove()">
+            </div>
+            <div>
+              <div class="person-name">Fuad Hasanzade</div>
+              <div class="person-role" data-en="Member" data-az="Üzv">Member</div>
+            </div>
+          </article>          
+          
+          <article class="person-card reveal">
+            <div class="person-photo">
+              <span class="person-fallback" aria-hidden="true">RC</span>
+              <img src="images/team/rahim-cabbarli.jpeg" alt="Rahim Cabbarli" loading="lazy" onerror="this.remove()">
+            </div>
+            <div>
+              <div class="person-name">Rahim Cabbarli</div>
+              <div class="person-role" data-en="Member" data-az="Üzv">Member</div>
+            </div>
+          </article>   
+          
+
+        </div>
+      </div>
+
+
+      
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html"><img src="assets/logo.png" alt="SJTU.AZ logo"><span>SJTU.AZ</span></a>
+        <p data-en="Azerbaijani Students Association at Shanghai Jiao Tong University." data-az="Shanghai Jiao Tong Universitetində Azərbaycan Tələbə Assosiasiyası.">Azerbaijani Students Association at Shanghai Jiao Tong University.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="team.html" data-i18n="nav_team">Team</a>
+        <a href="events.html" data-i18n="nav_events">Events</a>
+        <a href="join.html" data-i18n="nav_join">Join</a>
+      </nav>
+    </div>
+    <div class="dev-credit">developed by Yusif M.</div>
+  </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>
